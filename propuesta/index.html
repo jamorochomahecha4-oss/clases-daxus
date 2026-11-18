@@ -1,0 +1,296 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex">
+<title>Luz Tejida · Propuesta</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Instrument+Sans:wght@400;500;600&display=swap">
+<style>
+/* Layout: documento de propuesta en una columna ancha; bloques numerados solo donde hay secuencia real (fases). */
+:root{
+  --bg:#F4F4F1; --surface:#FFFFFF; --fg:#1F2326; --muted:#5E5B56; --line:rgba(31,35,38,.13);
+  --accent:#A85E2A; --glow:#E0A95B; --night:#17130F; --chip:#ECEAE4;
+  --f-display:"Bricolage Grotesque","Avenir Next",system-ui,sans-serif;
+  --f-text:"Instrument Sans","Helvetica Neue",system-ui,sans-serif;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#141210; --surface:#1D1A17; --fg:#EFEAE2; --muted:#A9A196; --line:rgba(239,234,226,.13);
+  --accent:#D88A4C; --glow:#E7B26A; --night:#0D0B09; --chip:#2A2622; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#141210; --surface:#1D1A17; --fg:#EFEAE2; --muted:#A9A196; --line:rgba(239,234,226,.13);
+  --accent:#D88A4C; --glow:#E7B26A; --night:#0D0B09; --chip:#2A2622; color-scheme:dark}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.6 var(--f-text);-webkit-font-smoothing:antialiased}
+.page{max-width:1180px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:56px 96px;display:grid;gap:88px}
+h1,h2,h3{font-family:var(--f-display);font-weight:600;letter-spacing:-.02em;line-height:1.05;margin:0;text-wrap:balance}
+p{margin:0}
+.eyebrow{font:600 12px/1 var(--f-text);letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
+.lead{font-size:clamp(17px,1.8vw,20px);color:var(--muted);max-width:62ch}
+section{display:grid;gap:28px;min-width:0}
+.sec-head{display:grid;gap:12px}
+.sec-head h2{font-size:clamp(30px,4vw,46px)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:4px}
+
+/* Portada */
+.cover{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:40px;align-items:center}
+.cover h1{font-size:clamp(52px,9vw,128px);font-weight:800;letter-spacing:-.04em;line-height:.92}
+.cover h1 span{color:var(--accent)}
+.cover-txt{display:grid;gap:22px}
+.phase{display:flex;gap:6px;flex-wrap:wrap}
+.phase span{font-size:12.5px;padding:6px 11px;border-radius:999px;border:1px solid var(--line);color:var(--muted)}
+.phase span.on{background:var(--fg);color:var(--bg);border-color:var(--fg)}
+.cover-img{position:relative;aspect-ratio:4/5;border-radius:6px;overflow:hidden;background:var(--night)}
+.cover-img img{width:100%;height:100%;object-fit:cover;display:block}
+.rays{position:absolute;inset:0;pointer-events:none;background:repeating-conic-gradient(from -90deg at 72% 22%,rgba(224,169,91,.25) 0 1.1deg,transparent 1.1deg 5.5deg);-webkit-mask-image:radial-gradient(circle at 72% 22%,#000 10%,transparent 65%);mask-image:radial-gradient(circle at 72% 22%,#000 10%,transparent 65%);mix-blend-mode:screen}
+
+/* Concepto */
+.pillars{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.pillar{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:24px;display:grid;gap:10px;align-content:start}
+.pillar h3{font-size:22px}
+.pillar p{color:var(--muted);font-size:15px}
+.quote{font:600 clamp(24px,3vw,36px)/1.2 var(--f-display);letter-spacing:-.02em;max-width:28ch;border-left:3px solid var(--glow);padding-left:20px}
+
+/* Paleta */
+.swatches{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:14px}
+.sw{display:grid;grid-template-rows:auto auto;border-radius:10px;overflow:hidden;background:var(--surface);border:1px solid var(--line)}
+.sw .chipc{height:96px;position:relative}
+.sw .src{position:absolute;right:8px;bottom:8px;width:38px;height:38px;border-radius:50%;border:2px solid #fff;background-size:cover;box-shadow:0 2px 8px rgba(0,0,0,.25)}
+.sw div.meta{padding:12px 14px;display:grid;gap:2px}
+.sw b{font-size:15px}
+.sw code{font:12.5px/1.3 ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--muted)}
+.sw small{font-size:12.5px;color:var(--muted);line-height:1.35}
+.ratio{display:flex;height:16px;border-radius:99px;overflow:hidden;border:1px solid var(--line)}
+.ratio-legend{font-size:13px;color:var(--muted)}
+
+/* Tipografía y componentes */
+.two{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:16px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:26px;display:grid;gap:16px;align-content:start;min-width:0}
+.card .lbl{font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:600}
+.spec-d{font:600 56px/1 var(--f-display);letter-spacing:-.03em}
+.spec-t{font:400 17px/1.6 var(--f-text);color:var(--muted)}
+.btns{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.b{display:inline-flex;align-items:center;gap:8px;border:0;border-radius:999px;padding:13px 20px;font:600 14.5px/1 var(--f-text);cursor:pointer;transition:transform .2s,background-color .2s,box-shadow .2s}
+.b:active{transform:scale(.97)}
+.b1{background:#A85E2A;color:#fff}.b1:hover{background:#8f4e22;box-shadow:0 8px 22px -10px rgba(168,94,42,.9)}
+.b2{background:#1f7a4d;color:#fff}.b2:hover{background:#17623d}
+.b3{background:transparent;color:var(--fg);box-shadow:inset 0 0 0 1.5px var(--fg)}.b3:hover{background:var(--fg);color:var(--bg)}
+.b span{transition:transform .2s}.b:hover span{transform:translateX(3px)}
+.note{font-size:14px;color:var(--muted)}
+
+/* Arquitectura */
+.arch{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,.7fr);gap:16px}
+.flow{list-style:none;margin:0;padding:0;display:grid;gap:0;counter-reset:s}
+.flow li{display:grid;grid-template-columns:34px minmax(0,1fr);gap:12px;padding:12px 0;border-bottom:1px solid var(--line);counter-increment:s}
+.flow li::before{content:counter(s,decimal-leading-zero);font:600 13px/1.6 ui-monospace,Menlo,monospace;color:var(--accent)}
+.flow b{display:block}
+.flow span{font-size:14px;color:var(--muted)}
+.pages{display:grid;gap:10px}
+.pg{border:1px dashed var(--line);border-radius:10px;padding:14px 16px;display:grid;gap:2px}
+.pg b{font-size:15px}.pg span{font-size:13.5px;color:var(--muted)}
+.pg.later{opacity:.7}
+
+/* Prototipo */
+.proto-bar{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;align-items:center}
+.seg{display:inline-flex;background:var(--chip);border-radius:999px;padding:4px}
+.seg button{border:0;background:none;padding:8px 16px;border-radius:999px;cursor:pointer;font:600 13.5px/1 var(--f-text);color:var(--muted)}
+.seg button[aria-pressed="true"]{background:var(--surface);color:var(--fg);box-shadow:0 1px 3px rgba(0,0,0,.12)}
+.open-full{font-weight:600;color:var(--accent)}
+.stage{background:var(--night);border-radius:14px;padding:clamp(10px,2vw,24px);display:flex;justify-content:center;overflow:hidden}
+.device{position:relative;overflow:hidden;border-radius:10px;background:#fff;box-shadow:0 30px 60px -30px rgba(0,0,0,.7);transition:width .45s cubic-bezier(.2,.7,.2,1),height .45s}
+.device iframe{border:0;position:absolute;top:0;left:0;transform-origin:0 0;background:#fff}
+
+/* Pendientes */
+.todo{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px 28px;list-style:none;margin:0;padding:0}
+.todo li{display:flex;gap:10px;padding:10px 0;border-bottom:1px solid var(--line);font-size:15px}
+.todo li::before{content:"";flex:none;width:14px;height:14px;margin-top:5px;border:1.5px dashed var(--accent);border-radius:4px}
+.ask{background:var(--surface);border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:10px;padding:24px;display:grid;gap:12px}
+.ask ol{margin:0;padding-left:20px;display:grid;gap:8px}
+
+@media (max-width:860px){
+  .cover,.two,.arch{grid-template-columns:minmax(0,1fr)}
+  .pillars{grid-template-columns:minmax(0,1fr)}
+  .todo{grid-template-columns:minmax(0,1fr)}
+  .cover-img{aspect-ratio:4/3}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+
+</head>
+<body>
+<div class="page">
+
+<header class="cover">
+  <div class="cover-txt">
+    <div class="phase" aria-label="Fases del proyecto">
+      <span>1 · Descubrimiento</span><span class="on">2 · Dirección creativa</span><span class="on">3 · Arquitectura y UX</span><span>4 · Desarrollo</span><span>5 · Publicación</span>
+    </div>
+    <h1>Luz<br><span>tejida</span></h1>
+    <p class="lead">Propuesta de concepto, paleta y estructura para la web de <b>Deluz Hotel</b>. Todo sale de las 14 fotos reales que compartiste. Concepto aprobado. El logo y varios datos siguen pendientes.</p>
+  </div>
+  <figure class="cover-img" style="margin:0">
+    <img src="../img/lampara-mimbre.webp" alt="Lámpara de mimbre proyectando rayos de luz sobre la pared de una habitación">
+    <div class="rays" aria-hidden="true"></div>
+  </figure>
+</header>
+
+<section>
+  <div class="sec-head">
+    <p class="eyebrow">Concepto creativo</p>
+    <h2>El hotel tiene dos caras, y las dos venden</h2>
+  </div>
+  <p class="quote">De día es blanco, fresco y verde. De noche se vuelve ámbar, madera y mimbre.</p>
+  <p class="lead">La imagen más fuerte del material es la sombra en rayos que proyectan las lámparas de mimbre. La convertimos en el motivo gráfico de la marca: un patrón de rayos finos que aparece detrás de los títulos y en las secciones nocturnas. Es ligero (CSS puro, sin imágenes extra) y no lo tiene ningún otro hotel.</p>
+  <div class="pillars">
+    <div class="pillar"><h3>Honesto</h3><p>Fotos reales a gran tamaño, datos claros y nada que el hotel no tenga. La calidad está en la composición, no en aparentar lujo.</p></div>
+    <div class="pillar"><h3>Cálido</h3><p>Tono cercano, como quien te recibe en la puerta. Botones que dicen "Consultar" y llevan a una persona, no a un sistema.</p></div>
+    <div class="pillar"><h3>Caribeño contemporáneo</h3><p>Arquitectura blanca y limpia con madera y fibras naturales. Lo dominicano entra por la luz, el verde y la artesanía, no por clichés.</p></div>
+  </div>
+</section>
+
+<section>
+  <div class="sec-head">
+    <p class="eyebrow">Paleta</p>
+    <h2>Colores tomados del propio edificio</h2>
+    <p class="lead">Cada color sale de un material que se ve en las fotos. El círculo de cada muestra indica de dónde viene.</p>
+  </div>
+  <div class="swatches">
+    <div class="sw"><div class="chipc" style="background:#F4F4F1"><i class="src" style="background-image:url(../img/fachada-esquina.webp);background-position:20% 40%"></i></div><div class="meta"><b>Cal</b><code>#F4F4F1</code><small>Muros y paredes. Fondo base.</small></div></div>
+    <div class="sw"><div class="chipc" style="background:#1F2326"><i class="src" style="background-image:url(../img/cocineta-negra.webp);background-position:50% 20%"></i></div><div class="meta"><b>Marco</b><code>#1F2326</code><small>Ventanas y cocineta negra. Texto.</small></div></div>
+    <div class="sw"><div class="chipc" style="background:#A85E2A"><i class="src" style="background-image:url(../img/fachada-puertas.webp);background-position:80% 80%"></i></div><div class="meta"><b>Teca</b><code>#A85E2A</code><small>Puertas de madera. Botón principal.</small></div></div>
+    <div class="sw"><div class="chipc" style="background:#E0A95B"><i class="src" style="background-image:url(../img/lampara-mimbre.webp);background-position:65% 35%"></i></div><div class="meta"><b>Mimbre</b><code>#E0A95B</code><small>Luz de las lámparas. Acentos de noche.</small></div></div>
+    <div class="sw"><div class="chipc" style="background:#17130F"><i class="src" style="background-image:url(../img/habitacion-doble-noche.webp);background-position:90% 60%"></i></div><div class="meta"><b>Noche</b><code>#17130F</code><small>Secciones oscuras y pie de página.</small></div></div>
+    <div class="sw"><div class="chipc" style="background:#DDD5C7"><i class="src" style="background-image:url(../img/fachada-puertas.webp);background-position:36% 20%"></i></div><div class="meta"><b>Travertino</b><code>#DDD5C7</code><small>Franja de piedra. Fondos de apoyo.</small></div></div>
+    <div class="sw"><div class="chipc" style="background:#3D6B4B"><i class="src" style="background-image:url(../img/mesa-luz-dia.webp);background-position:80% 20%"></i></div><div class="meta"><b>Palma</b><code>#3D6B4B</code><small>Vegetación. Uso puntual.</small></div></div>
+    <div class="sw"><div class="chipc" style="background:#3B5B7D"><i class="src" style="background-image:url(../img/cocineta-azul.webp);background-position:20% 70%"></i></div><div class="meta"><b>Añil</b><code>#3B5B7D</code><small>Cocineta azul. Reserva, sin uso en la v1.</small></div></div>
+  </div>
+  <div style="display:grid;gap:8px">
+    <div class="ratio" aria-label="Proporción de uso de la paleta">
+      <i style="flex:60;background:#F4F4F1"></i><i style="flex:16;background:#1F2326"></i><i style="flex:10;background:#17130F"></i><i style="flex:6;background:#A85E2A"></i><i style="flex:5;background:#E0A95B"></i><i style="flex:3;background:#3D6B4B"></i>
+    </div>
+    <p class="ratio-legend">Proporción aproximada: mucha cal, texto en marco, bandas de noche y la teca solo en botones. Si el logo trae sus propios colores, esta paleta se ajusta a él.</p>
+  </div>
+</section>
+
+<section>
+  <div class="sec-head">
+    <p class="eyebrow">Tipografía y botones</p>
+    <h2>Una voz con carácter, sin solemnidad</h2>
+  </div>
+  <div class="two">
+    <div class="card">
+      <span class="lbl">Títulos · Bricolage Grotesque</span>
+      <div class="spec-d">Cuartos claros de día, cálidos de noche.</div>
+      <span class="lbl">Texto · Instrument Sans</span>
+      <p class="spec-t">Habitaciones y estudios con cocineta, aire acondicionado y camas dobles. Escríbenos y te confirmamos disponibilidad.</p>
+      <p class="note">Elegí una grotesca con curvas suaves en lugar de una serif "de hotel". Se siente actual y cercana, y evita parecer una plantilla de resort.</p>
+    </div>
+    <div class="card">
+      <span class="lbl">Botones</span>
+      <div class="btns">
+        <button class="b b1" type="button">Consultar disponibilidad <span>→</span></button>
+        <button class="b b2" type="button">Consultar por WhatsApp <span>→</span></button>
+        <button class="b b3" type="button">Ver fotos</button>
+      </div>
+      <p class="note">Botones en forma de píldora. La flecha se desplaza al pasar el cursor y el botón se encoge un poco al pulsarlo. Hay una sola acción principal por pantalla: <b>consultar</b>. El verde se usa solo en las acciones de WhatsApp para que se reconozcan al instante.</p>
+      <span class="lbl">Microinteracciones del prototipo</span>
+      <p class="note">Interruptor día/noche en la portada · subrayado en el menú · deslizador de fotos en las habitaciones · galería con filtros y visor ampliado · cabecera que se vuelve sólida al bajar · barra fija de "Consultar" en el móvil · aparición suave del contenido al hacer scroll.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="sec-head">
+    <p class="eyebrow">Arquitectura del sitio</p>
+    <h2>Una página principal fuerte y pocas páginas más</h2>
+    <p class="lead">Para un hotel con dos tipos de habitación, la mayoría de la gente decide en una sola página. Separar mucho obliga a hacer clics que no aportan. Este es el recorrido de la página de inicio, en orden:</p>
+  </div>
+  <div class="arch">
+    <ol class="flow">
+      <li><div><b>Portada con interruptor día/noche</b><span>Foto real, frase y barra de consulta: fechas, huéspedes y WhatsApp.</span></div></li>
+      <li><div><b>Lo esencial</b><span>Íconos con lo que el huésped busca primero: aire, camas, cocineta, wifi y parqueo.</span></div></li>
+      <li><div><b>Habitaciones</b><span>Dos tarjetas con fotos deslizables y un botón para consultar.</span></div></li>
+      <li><div><b>De día / de noche</b><span>Banda editorial oscura con el motivo de rayos. Es el momento de marca.</span></div></li>
+      <li><div><b>El hotel</b><span>Arquitectura, historia y cifras de trayectoria.</span></div></li>
+      <li><div><b>Galería</b><span>Filtros por espacio y visor a pantalla completa.</span></div></li>
+      <li><div><b>Ubicación</b><span>Mapa, distancias y botón "Cómo llegar".</span></div></li>
+      <li><div><b>Contacto y consulta</b><span>Formulario que redacta el mensaje de WhatsApp, más teléfono y correo.</span></div></li>
+    </ol>
+    <div class="pages">
+      <span class="lbl" style="font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:600">Páginas independientes</span>
+      <div class="pg"><b>/habitaciones/doble</b><span>Ficha completa: todas las fotos, equipamiento y preguntas frecuentes.</span></div>
+      <div class="pg"><b>/habitaciones/estudio</b><span>Lo mismo para el estudio. Sirven para compartir por WhatsApp y para Google.</span></div>
+      <div class="pg later"><b>/en</b><span>Versión en inglés (opcional, según el tipo de huésped).</span></div>
+      <div class="pg later"><b>/politicas</b><span>Entrada y salida, cancelación y mascotas. Se hace cuando tengamos los datos.</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="prototipo">
+  <div class="sec-head">
+    <p class="eyebrow">Prototipo navegable</p>
+    <h2>Así se vería la página de inicio</h2>
+    <p class="lead">Funciona de verdad: prueba el interruptor día/noche, los filtros de la galería y el formulario. Los textos con <u style="text-decoration-style:dotted;text-decoration-color:var(--accent);text-underline-offset:4px">subrayado punteado</u> son datos por confirmar.</p>
+  </div>
+  <div class="proto-bar">
+    <div class="seg" role="group" aria-label="Tamaño de pantalla">
+      <button type="button" data-w="1280" aria-pressed="true">Escritorio</button>
+      <button type="button" data-w="820" aria-pressed="false">Tablet</button>
+      <button type="button" data-w="390" aria-pressed="false">Móvil</button>
+    </div>
+    <a class="open-full" href="../index.html" target="_blank" rel="noopener">Abrir a pantalla completa ↗</a>
+  </div>
+  <div class="stage" id="stage">
+    <div class="device" id="device"><iframe id="frame" src="../index.html" title="Prototipo de la página de inicio"></iframe></div>
+  </div>
+</section>
+
+<section>
+  <div class="sec-head">
+    <p class="eyebrow">Lo que falta</p>
+    <h2>Marcadores temporales en el prototipo</h2>
+  </div>
+  <ul class="todo">
+    <li><s>Nombre comercial</s> → Deluz Hotel ✓ · logotipo pendiente</li>
+    <li><s>Ubicación</s> → El Limón, Samaná · punto exacto de Google Maps ✓</li>
+    <li><s>Teléfono</s> → +1 809 484 9331 ✓ · confirmar que tiene WhatsApp · falta correo</li>
+    <li>Número de habitaciones y capacidad de cada tipo</li>
+    <li><s>Wifi y parqueo</s> ✓ · confirmar baño privado y agua caliente</li>
+    <li>Historia del hotel y años de trayectoria</li>
+    <li>Reseñas o valoración (Booking, Google, Expedia)</li>
+    <li>Fotos de la piscina, gimnasio, terraza, jardín, entrada con letrero y del entorno (Salto El Limón)</li>
+  </ul>
+  <div class="ask">
+    <b>Para avanzar necesito tu opinión sobre:</b>
+    <ol>
+            <li>¿La paleta sacada del edificio te parece bien hasta que exista el logo?</li>
+      <li>¿WhatsApp como canal principal de consulta es correcto?</li>
+      <li>¿Página de inicio larga más dos fichas de habitación, o prefieres más páginas?</li>
+    </ol>
+  </div>
+</section>
+
+</div>
+
+<script>
+(function(){
+  const stage=document.getElementById('stage'),dev=document.getElementById('device'),fr=document.getElementById('frame');
+  let W=1280;const H={1280:820,820:1000,390:780};
+  function fit(){
+    const avail=stage.clientWidth-parseFloat(getComputedStyle(stage).paddingLeft)*2;
+    const s=Math.min(1,avail/W),h=H[W];
+    fr.style.width=W+'px';fr.style.height=h+'px';fr.style.transform=`scale(${s})`;
+    dev.style.width=(W*s)+'px';dev.style.height=(h*s)+'px';
+  }
+  document.querySelectorAll('.seg button').forEach(b=>b.addEventListener('click',()=>{
+    W=+b.dataset.w;document.querySelectorAll('.seg button').forEach(x=>x.setAttribute('aria-pressed',x===b));fit();
+  }));
+  addEventListener('resize',fit);fit();
+})();
+</script>
+
+</body>
+</html>
