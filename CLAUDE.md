@@ -117,7 +117,7 @@ Páginas aparte (Fase 4): `/habitaciones/doble`, `/habitaciones/estudio`; opcion
 - [x] Página 404 y cabeceras de caché (`_headers`).
 
 ## Pendientes (dependen del cliente)
-- [ ] Forma oficial del nombre y logotipo: la web antigua usa **"De Luz Hotel"** con logo verde y limón. ¿Se adopta? (afectaría a la paleta "Luz tejida"). Hoy el logotipo provisional dice "Deluz".
+- [ ] **Logotipo — EN ESPERA por decisión del cliente (18/11/2026).** Opciones: logo verde con limón de la web antigua (pedir archivo original; afectaría a la paleta) o mantener el provisional "Deluz". No tocar la cabecera, el favicon ni la paleta hasta que el cliente decida.
 - [ ] **Qué número es el WhatsApp de reservas:** 809-757-5168 (web oficial) o 809-484-9331 (Expedia). Correo ya puesto: deluzhotel@gmail.com.
 - [ ] Número total de habitaciones (8 según la web oficial) y **capacidad** de cada tipo (2–3 según la web oficial, pero las fotos muestran 2 camas queen). Hoy `tbd`.
 - [x] Baño privado en todas (web oficial).
