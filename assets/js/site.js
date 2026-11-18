@@ -39,6 +39,41 @@
     $$('#drawer a').forEach(function (a) { a.addEventListener('click', closeMenu); });
   }
 
+  /* Menú de escritorio con desplegables: clic/teclado abre y cierra; en ratón también se abre al pasar */
+  var subs = $$('.has-sub');
+  function closeSubs(except) {
+    subs.forEach(function (li) {
+      if (li === except) return;
+      li.classList.remove('open');
+      $('.nav-btn', li).setAttribute('aria-expanded', 'false');
+    });
+  }
+  subs.forEach(function (li) {
+    var btn = $('.nav-btn', li);
+    btn.addEventListener('click', function (e) {
+      e.stopPropagation();
+      var o = li.classList.toggle('open');
+      btn.setAttribute('aria-expanded', String(o));
+      closeSubs(li);
+    });
+    li.addEventListener('mouseleave', function () {
+      li.classList.remove('open');
+      btn.setAttribute('aria-expanded', 'false');
+    });
+    li.addEventListener('focusout', function (e) {
+      if (!li.contains(e.relatedTarget)) { li.classList.remove('open'); btn.setAttribute('aria-expanded', 'false'); }
+    });
+    $$('.sub a', li).forEach(function (a) { a.addEventListener('click', function () { closeSubs(); }); });
+  });
+  document.addEventListener('click', function () { closeSubs(); });
+
+  /* Menú móvil: solo un grupo abierto a la vez */
+  $$('#drawer details').forEach(function (d) {
+    d.addEventListener('toggle', function () {
+      if (d.open) $$('#drawer details').forEach(function (o) { if (o !== d) o.open = false; });
+    });
+  });
+
   /* Interruptor día / noche (portada) */
   var copy = {
     night: 'Cuartos claros de día, <em>cálidos</em> de noche.',
@@ -160,7 +195,7 @@
     });
   }
   window.addEventListener('keydown', function (e) {
-    if (e.key === 'Escape') { if (lb) lb.classList.remove('open'); closeSheet(); closeMenu(); }
+    if (e.key === 'Escape') { if (lb) lb.classList.remove('open'); closeSheet(); closeMenu(); closeSubs(); }
   });
 
   /* Ubicación: pestañas Google Maps / Alrededores.

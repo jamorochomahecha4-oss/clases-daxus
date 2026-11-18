@@ -90,7 +90,9 @@ WhatsApp usa verde propio `#1f7a4d` solo en sus botones.
 Botones píldora (principal teca, WhatsApp verde, fantasma con borde); flecha que se desplaza al pasar el cursor; tarjetas de habitación con deslizador de fotos; galería con filtros y visor; mapa esquemático con rayos hacia los lugares cercanos y rutas reales de Google Maps; barra fija "Consultar" en móvil; aparición suave al hacer scroll (respeta `prefers-reduced-motion`).
 
 ## Arquitectura aprobada
-Inicio de una sola página: Portada + consulta → Lo esencial → Habitaciones → De día / de noche → El hotel → Galería → Ubicación → Contacto.
+Inicio de una sola página: Portada + consulta → Lo esencial → Habitaciones → De día / de noche → El hotel (incluye "Quiénes somos", `#nosotros`) → Galería → Ubicación → Excursiones (`#excursiones`) → Opiniones (`#opiniones`, enlaces a Booking/Tripadvisor/Google, sin puntuación) → Contacto.
+
+**Menú** (pedido por el cliente, mismos apartados que la web antigua pero con estilo propio y desplegables): Habitaciones ▾ · El hotel ▾ · Ubicación ▾ · Excursiones ▾ · Opiniones ▾ · Contacto ▾. En escritorio se abre al pasar el ratón o con clic/teclado; en móvil (≤ 1180 px) es un acordeón dentro del menú a pantalla completa. El menú está repetido en las 4 páginas.
 Páginas aparte (Fase 4): `/habitaciones/doble`, `/habitaciones/estudio`; opcionales `/en`, `/politicas`.
 
 ## Hecho en la Fase 4
@@ -109,7 +111,8 @@ Páginas aparte (Fase 4): `/habitaciones/doble`, `/habitaciones/estudio`; opcion
 - [x] Baño privado en todas (web oficial).
 - [ ] Agua caliente resuelta; hora de check-out (12:00 / 13:00 / 14:30); otros métodos de pago.
 - [ ] ¿Usar como testimonio la reseña de Tripadvisor "el dueño siempre estuvo disponible y el personal me trató como si estuviera en su casa"? (requiere aprobación).
-- [ ] Historia y años de trayectoria (párrafo `tbd` en "El hotel").
+- [ ] Historia y años de trayectoria (bloque "Quiénes somos" `#nosotros`, hoy `tbd`).
+- [ ] ¿El hotel organiza excursiones? (la web antigua tiene sección "Excursiones"; hoy la frase de ayuda está `tbd`).
 - [ ] Fotos de piscina (candidata a portada "De día"), gimnasio, terraza, jardín, entrada, entorno.
 - [ ] Versión en inglés (decidir).
 

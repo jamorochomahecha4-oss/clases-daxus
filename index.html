@@ -97,22 +97,76 @@
       <small>Hotel<br>El Limón · Samaná</small>
     </a>
     <nav class="nav" aria-label="Principal">
-      <a href="#habitaciones">Habitaciones</a>
-      <a href="#hotel">El hotel</a>
-      <a href="#galeria">Galería</a>
-      <a href="#ubicacion">Ubicación</a>
-      <a href="#contacto">Contacto</a>
+      <ul class="menu">
+      <li class="has-sub">
+        <button class="nav-btn" type="button" aria-expanded="false" aria-controls="sub-hab">Habitaciones<svg class="chev" viewBox="0 0 12 12" aria-hidden="true"><path d="M3 4.5 6 7.5 9 4.5"/></svg></button>
+        <div class="sub" id="sub-hab">
+          <a href="habitaciones/doble/index.html"><b>Habitación Doble</b><small>2 camas queen · aire acondicionado</small></a><a href="habitaciones/estudio/index.html"><b>Estudio con cocineta</b><small>Cocina propia · mesa para 4</small></a><a href="#consulta"><b>Tarifas y disponibilidad</b><small>Te enviamos el precio por WhatsApp</small></a>
+        </div>
+      </li>
+      <li class="has-sub">
+        <button class="nav-btn" type="button" aria-expanded="false" aria-controls="sub-hotel">El hotel<svg class="chev" viewBox="0 0 12 12" aria-hidden="true"><path d="M3 4.5 6 7.5 9 4.5"/></svg></button>
+        <div class="sub" id="sub-hotel">
+          <a href="#hotel"><b>Nuestra propiedad</b><small>Edificio, piscina, jardín y parqueo</small></a><a href="#nosotros"><b>Quiénes somos</b><small>La historia del hotel</small></a><a href="#galeria"><b>Galería de fotos</b><small>Habitaciones, baños y edificio</small></a>
+        </div>
+      </li>
+      <li class="has-sub">
+        <button class="nav-btn" type="button" aria-expanded="false" aria-controls="sub-ubi">Ubicación<svg class="chev" viewBox="0 0 12 12" aria-hidden="true"><path d="M3 4.5 6 7.5 9 4.5"/></svg></button>
+        <div class="sub" id="sub-ubi">
+          <a href="#ubicacion"><b>Cómo llegar</b><small>Mapa, dirección y distancias</small></a><a href="https://www.google.com/maps/place/De+Luz+Hotel/@19.2942143,-69.4327929,17z/data=!3m1!4b1!4m6!3m5!1s0x8eaee575bb2371f7:0xa61d08177c4b8f41!8m2!3d19.2942143!4d-69.4327929" target="_blank" rel="noopener"><b>Abrir en Google Maps ↗</b><small>Ruta desde donde estés</small></a>
+        </div>
+      </li>
+      <li class="has-sub">
+        <button class="nav-btn" type="button" aria-expanded="false" aria-controls="sub-exc">Excursiones<svg class="chev" viewBox="0 0 12 12" aria-hidden="true"><path d="M3 4.5 6 7.5 9 4.5"/></svg></button>
+        <div class="sub" id="sub-exc">
+          <a href="#exc-salto"><b>Salto El Limón</b><small>La cascada más cercana</small></a><a href="#exc-moron"><b>Playa Morón</b><small>Costa norte</small></a><a href="#exc-terrenas"><b>Las Terrenas</b><small>Playas y restaurantes</small></a><a href="#exc-samana"><b>Santa Bárbara de Samaná</b><small>Malecón, Cayo Levantado y ballenas</small></a>
+        </div>
+      </li>
+      <li class="has-sub">
+        <button class="nav-btn" type="button" aria-expanded="false" aria-controls="sub-opi">Opiniones<svg class="chev" viewBox="0 0 12 12" aria-hidden="true"><path d="M3 4.5 6 7.5 9 4.5"/></svg></button>
+        <div class="sub" id="sub-opi">
+          <a href="#opiniones"><b>Lo que dicen los huéspedes</b><small>Reseñas reales en las plataformas</small></a><a href="https://www.booking.com/hotel/do/de-luz.html" target="_blank" rel="noopener"><b>Opiniones en Booking ↗</b><small>booking.com</small></a><a href="https://www.tripadvisor.com/Hotel_Review-g7142209-d10816859-Reviews-De_Luz_Hotel-El_Limon_Samana_Province_Dominican_Republic.html" target="_blank" rel="noopener"><b>Opiniones en Tripadvisor ↗</b><small>tripadvisor.com</small></a>
+        </div>
+      </li>
+      <li class="has-sub">
+        <button class="nav-btn" type="button" aria-expanded="false" aria-controls="sub-con">Contacto<svg class="chev" viewBox="0 0 12 12" aria-hidden="true"><path d="M3 4.5 6 7.5 9 4.5"/></svg></button>
+        <div class="sub" id="sub-con">
+          <a href="https://wa.me/18094849331" target="_blank" rel="noopener"><b>WhatsApp ↗</b><small>+1 809 484 9331</small></a><a href="tel:+18094849331"><b>Llamar</b><small>+1 809 484 9331</small></a><a href="mailto:deluzhotel@gmail.com"><b>Correo</b><small>deluzhotel@gmail.com</small></a><a href="#contacto"><b>Formulario de consulta</b><small>Prepara tu mensaje en un minuto</small></a>
+        </div>
+      </li>
+      </ul>
     </nav>
     <a class="btn btn-primary" href="#consulta">Consultar disponibilidad</a>
     <button class="burger" id="burger" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="drawer"><span></span></button>
   </div>
 </header>
 <nav class="drawer" id="drawer" aria-label="Menú móvil">
-  <a href="#habitaciones">Habitaciones</a>
-  <a href="#hotel">El hotel</a>
-  <a href="#galeria">Galería</a>
-  <a href="#ubicacion">Ubicación</a>
-  <a href="#contacto">Contacto</a>
+  <a class="drawer-home" href="#inicio">Inicio</a>
+  <details>
+    <summary>Habitaciones<svg class="chev" viewBox="0 0 12 12" aria-hidden="true"><path d="M3 4.5 6 7.5 9 4.5"/></svg></summary>
+    <div><a href="habitaciones/doble/index.html">Habitación Doble</a><a href="habitaciones/estudio/index.html">Estudio con cocineta</a><a href="#consulta">Tarifas y disponibilidad</a></div>
+  </details>
+  <details>
+    <summary>El hotel<svg class="chev" viewBox="0 0 12 12" aria-hidden="true"><path d="M3 4.5 6 7.5 9 4.5"/></svg></summary>
+    <div><a href="#hotel">Nuestra propiedad</a><a href="#nosotros">Quiénes somos</a><a href="#galeria">Galería de fotos</a></div>
+  </details>
+  <details>
+    <summary>Ubicación<svg class="chev" viewBox="0 0 12 12" aria-hidden="true"><path d="M3 4.5 6 7.5 9 4.5"/></svg></summary>
+    <div><a href="#ubicacion">Cómo llegar</a><a href="https://www.google.com/maps/place/De+Luz+Hotel/@19.2942143,-69.4327929,17z/data=!3m1!4b1!4m6!3m5!1s0x8eaee575bb2371f7:0xa61d08177c4b8f41!8m2!3d19.2942143!4d-69.4327929" target="_blank" rel="noopener">Abrir en Google Maps ↗</a></div>
+  </details>
+  <details>
+    <summary>Excursiones<svg class="chev" viewBox="0 0 12 12" aria-hidden="true"><path d="M3 4.5 6 7.5 9 4.5"/></svg></summary>
+    <div><a href="#exc-salto">Salto El Limón</a><a href="#exc-moron">Playa Morón</a><a href="#exc-terrenas">Las Terrenas</a><a href="#exc-samana">Santa Bárbara de Samaná</a></div>
+  </details>
+  <details>
+    <summary>Opiniones<svg class="chev" viewBox="0 0 12 12" aria-hidden="true"><path d="M3 4.5 6 7.5 9 4.5"/></svg></summary>
+    <div><a href="#opiniones">Lo que dicen los huéspedes</a><a href="https://www.booking.com/hotel/do/de-luz.html" target="_blank" rel="noopener">Opiniones en Booking ↗</a><a href="https://www.tripadvisor.com/Hotel_Review-g7142209-d10816859-Reviews-De_Luz_Hotel-El_Limon_Samana_Province_Dominican_Republic.html" target="_blank" rel="noopener">Opiniones en Tripadvisor ↗</a></div>
+  </details>
+  <details>
+    <summary>Contacto<svg class="chev" viewBox="0 0 12 12" aria-hidden="true"><path d="M3 4.5 6 7.5 9 4.5"/></svg></summary>
+    <div><a href="https://wa.me/18094849331" target="_blank" rel="noopener">WhatsApp ↗</a><a href="tel:+18094849331">Llamar</a><a href="mailto:deluzhotel@gmail.com">Correo</a><a href="#contacto">Formulario de consulta</a></div>
+  </details>
+  <a class="btn btn-wa drawer-cta" href="#consulta">Consultar disponibilidad</a>
 </nav>
 
 <main id="main">
@@ -235,7 +289,8 @@
       <p class="eyebrow">El hotel</p>
       <h2>Blanco, madera y vegetación</h2>
       <p>Un edificio de tres plantas con muros encalados, ventanales de marco negro y puertas de madera que se abren a un jardín joven. Tiene piscina al aire libre, terraza, gimnasio y parrillas para los huéspedes.</p>
-      <p class="tbd">[Historia del hotel: años en la zona, quién lo atiende y qué lo hace conocido. Pendiente.]</p>
+      <div id="nosotros" class="nosotros"><h3>Quiénes somos</h3>
+      <p class="tbd">[Historia del hotel: años en la zona, quién lo atiende y qué lo hace conocido. Pendiente.]</p></div>
     </div>
   </div>
 </section>
@@ -323,6 +378,57 @@
         <div><b>Traslado</b><span>Aeropuerto, con costo extra</span></div>
       </div>
       <div class="map-btns"><a class="btn btn-primary" href="https://www.google.com/maps/dir/?api=1&amp;destination=19.2942143%2C-69.4327929" target="_blank" rel="noopener">Cómo llegar <span class="arr" aria-hidden="true">↗</span></a><a class="btn btn-ghost" href="https://www.google.com/maps/place/De+Luz+Hotel/@19.2942143,-69.4327929,17z/data=!3m1!4b1!4m6!3m5!1s0x8eaee575bb2371f7:0xa61d08177c4b8f41!8m2!3d19.2942143!4d-69.4327929" target="_blank" rel="noopener">Ver en Google Maps</a></div>
+    </div>
+  </div>
+</section>
+
+<section class="band exc-band" id="excursiones">
+  <div class="wrap">
+    <div class="head rv">
+      <div><p class="eyebrow">Excursiones</p><h2>Qué hacer cerca</h2></div>
+      <p>El Limón es buen punto de partida para conocer la península de Samaná. <span class="tbd">Pregúntanos por WhatsApp si te ayudamos a organizar la excursión.</span></p>
+    </div>
+    <div class="exc-grid">
+      <article class="exc rv" id="exc-salto">
+        <p class="eyebrow">El más cercano</p>
+        <h3>Salto El Limón</h3>
+        <p>Cascada de unos 40 metros en plena selva. Se llega caminando o a caballo desde El Limón.</p>
+        <a href="https://www.google.com/maps/dir/?api=1&amp;origin=19.2942143%2C-69.4327929&amp;destination=Salto+El+Lim%C3%B3n%2C+Saman%C3%A1&amp;travelmode=driving" target="_blank" rel="noopener">Ver ruta desde el hotel ↗</a>
+      </article>
+      <article class="exc rv" id="exc-moron">
+        <p class="eyebrow">Costa norte</p>
+        <h3>Playa Morón</h3>
+        <p>Playa de la costa norte de la península, cerca de El Limón.</p>
+        <a href="https://www.google.com/maps/dir/?api=1&amp;origin=19.2942143%2C-69.4327929&amp;destination=Playa+Mor%C3%B3n%2C+El+Lim%C3%B3n%2C+Saman%C3%A1&amp;travelmode=driving" target="_blank" rel="noopener">Ver ruta desde el hotel ↗</a>
+      </article>
+      <article class="exc rv" id="exc-terrenas">
+        <p class="eyebrow">Hacia el oeste</p>
+        <h3>Las Terrenas</h3>
+        <p>Pueblo de playa con restaurantes, comercios y ambiente por la noche.</p>
+        <a href="https://www.google.com/maps/dir/?api=1&amp;origin=19.2942143%2C-69.4327929&amp;destination=Las+Terrenas%2C+Saman%C3%A1&amp;travelmode=driving" target="_blank" rel="noopener">Ver ruta desde el hotel ↗</a>
+      </article>
+      <article class="exc rv" id="exc-samana">
+        <p class="eyebrow">≈ 13 km</p>
+        <h3>Santa Bárbara de Samaná</h3>
+        <p>Malecón y puerto. Desde aquí salen los barcos a Cayo Levantado y, de enero a marzo, a ver las ballenas jorobadas.</p>
+        <a href="https://www.google.com/maps/dir/?api=1&amp;origin=19.2942143%2C-69.4327929&amp;destination=Santa+B%C3%A1rbara+de+Saman%C3%A1&amp;travelmode=driving" target="_blank" rel="noopener">Ver ruta desde el hotel ↗</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="band opi-band" id="opiniones">
+  <div class="rays" aria-hidden="true"></div>
+  <div class="wrap opi">
+    <div class="rv">
+      <p class="eyebrow">Opiniones</p>
+      <h2>Lo que dicen los huéspedes</h2>
+      <p>Lee las reseñas reales de quienes se han quedado con nosotros, en las plataformas donde nos reservan.</p>
+    </div>
+    <div class="opi-links rv">
+      <a href="https://www.booking.com/hotel/do/de-luz.html" target="_blank" rel="noopener"><b>Booking</b><span>Ver opiniones ↗</span></a>
+      <a href="https://www.tripadvisor.com/Hotel_Review-g7142209-d10816859-Reviews-De_Luz_Hotel-El_Limon_Samana_Province_Dominican_Republic.html" target="_blank" rel="noopener"><b>Tripadvisor</b><span>Ver opiniones ↗</span></a>
+      <a href="https://www.google.com/maps/place/De+Luz+Hotel/@19.2942143,-69.4327929,17z/data=!3m1!4b1!4m6!3m5!1s0x8eaee575bb2371f7:0xa61d08177c4b8f41!8m2!3d19.2942143!4d-69.4327929" target="_blank" rel="noopener"><b>Google</b><span>Ver opiniones ↗</span></a>
     </div>
   </div>
 </section>
