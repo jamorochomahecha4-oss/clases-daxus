@@ -66,6 +66,7 @@ Revisada el 18/11/2026. Fotos e imágenes descargadas solo como referencia (no e
 - **Excursiones (web antigua):** Salto El Limón a caballo con rancho recomendado por el hotel (~35 min a caballo, almuerzo típico); avistamiento de ballenas del 15 de enero al 31 de marzo con parada en Cayo Levantado. El hotel **recomienda** ranchos.
 - **Piscina:** no aparece en la web antigua (ni fotos ni texto).
 - **Imágenes de excursiones:** varias parecen de banco de imágenes (ballena, buceo, tirolina, playa con palmeras, Los Haitises). **No usar** sin confirmar que son del hotel.
+- **Decisión del cliente (18/11/2026): no usar ninguna foto de la web antigua.** La web nueva solo usa las 14 fotos de `fotos-originales/`.
 
 ## Lo que muestran las fotos
 - Edificio blanco de 3 plantas, ventanales con marco negro, franja de travertino, puertas de madera, árboles jóvenes.
