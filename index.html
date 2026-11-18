@@ -3,313 +3,96 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>De Luz Hotel · El Limón, Samaná</title>
-<!-- PROTOTIPO: quitar la línea robots noindex al lanzar -->
+<title>De Luz Hotel · Hotel en El Limón, Samaná</title>
+<meta name="description" content="Hotel en El Limón, Samaná: habitaciones dobles y estudios con cocineta, piscina, wifi y parqueo gratis, cerca del Salto El Limón. Consulta disponibilidad por WhatsApp.">
+<!-- PROTOTIPO: quitar la línea robots noindex el día del lanzamiento -->
 <meta name="robots" content="noindex">
+<meta name="theme-color" content="#17130F">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_DO">
+<meta property="og:site_name" content="De Luz Hotel">
+<meta property="og:title" content="De Luz Hotel · Hotel en El Limón, Samaná">
+<meta property="og:description" content="Hotel en El Limón, Samaná: habitaciones dobles y estudios con cocineta, piscina, wifi y parqueo gratis, cerca del Salto El Limón. Consulta disponibilidad por WhatsApp.">
+<!-- Al tener dominio: usar URL absoluta en og:image y añadir og:url / canonical (/) -->
+<meta property="og:image" content="img/habitacion-doble-amplia.webp">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Instrument+Sans:wght@400;500;600&display=swap">
-<style>
-/* Layout: editorial de una sola página; bandas claras (día) y oscuras (noche) alternadas, fotos a sangre. */
-:root{
-  --cal:#F4F4F1;      /* paredes encaladas */
-  --blanco:#FFFFFF;
-  --piedra:#DDD5C7;   /* franja de travertino */
-  --tinta:#1F2326;    /* marcos de ventana, cocineta negra */
-  --manta:#5A5753;    /* manta gris */
-  --teca:#A85E2A;     /* puertas de madera */
-  --mimbre:#E0A95B;   /* luz de las lámparas */
-  --noche:#17130F;    /* habitación de noche */
-  --palma:#3D6B4B;    /* vegetación */
-  --anil:#3B5B7D;     /* cocineta azul */
-  --linea:rgba(31,35,38,.14);
-  --f-display:"Bricolage Grotesque", "Avenir Next", system-ui, sans-serif;
-  --f-text:"Instrument Sans", "Helvetica Neue", system-ui, sans-serif;
-  --gut:max(16px, env(safe-area-inset-left, 0px));
-  --gutr:max(16px, env(safe-area-inset-right, 0px));
-  --ease:cubic-bezier(.2,.7,.2,1);
-  color-scheme:light;
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&amp;family=Instrument+Sans:wght@400;500;600&amp;display=swap">
+<link rel="stylesheet" href="assets/css/site.css">
+<link rel="preload" as="image" href="img/800/habitacion-doble-noche.webp" media="(max-width:800px)">
+<link rel="preload" as="image" href="img/habitacion-doble-noche.webp" media="(min-width:801px)">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "Hotel",
+ "name": "De Luz Hotel",
+ "description": "Hotel en El Limón, Samaná, con habitaciones dobles y estudios con cocineta, piscina al aire libre, wifi y parqueo gratis.",
+ "address": {
+  "@type": "PostalAddress",
+  "addressLocality": "El Limón",
+  "addressRegion": "Samaná",
+  "postalCode": "32000",
+  "addressCountry": "DO"
+ },
+ "geo": {
+  "@type": "GeoCoordinates",
+  "latitude": 19.2942143,
+  "longitude": -69.4327929
+ },
+ "hasMap": "https://www.google.com/maps/place/De+Luz+Hotel/@19.2942143,-69.4327929,17z/data=!3m1!4b1!4m6!3m5!1s0x8eaee575bb2371f7:0xa61d08177c4b8f41!8m2!3d19.2942143!4d-69.4327929",
+ "telephone": "+1-809-484-9331",
+ "image": [
+  "img/fachada-puertas.webp",
+  "img/habitacion-doble-amplia.webp",
+  "img/estudio-cocineta.webp"
+ ],
+ "checkinTime": "15:00",
+ "petsAllowed": true,
+ "paymentAccepted": "Efectivo",
+ "amenityFeature": [
+  {
+   "@type": "LocationFeatureSpecification",
+   "name": "Piscina al aire libre",
+   "value": true
+  },
+  {
+   "@type": "LocationFeatureSpecification",
+   "name": "Wifi gratis",
+   "value": true
+  },
+  {
+   "@type": "LocationFeatureSpecification",
+   "name": "Parqueo gratis",
+   "value": true
+  },
+  {
+   "@type": "LocationFeatureSpecification",
+   "name": "Gimnasio",
+   "value": true
+  },
+  {
+   "@type": "LocationFeatureSpecification",
+   "name": "Aire acondicionado",
+   "value": true
+  },
+  {
+   "@type": "LocationFeatureSpecification",
+   "name": "Admite mascotas",
+   "value": true
+  }
+ ]
 }
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{margin:0;background:var(--cal);color:var(--tinta);font:16px/1.6 var(--f-text);-webkit-font-smoothing:antialiased;overflow-x:hidden}
-img{max-width:100%;display:block}
-a{color:inherit}
-button,input,select,textarea{font:inherit;color:inherit}
-:focus-visible{outline:2px solid var(--teca);outline-offset:3px;border-radius:4px}
-h1,h2,h3{font-family:var(--f-display);font-weight:600;line-height:1.05;letter-spacing:-.02em;margin:0;text-wrap:balance}
-p{margin:0}
-.wrap{max-width:1240px;margin:0 auto;padding-left:var(--gut);padding-right:var(--gutr)}
-.eyebrow{font:600 12px/1 var(--f-text);letter-spacing:.14em;text-transform:uppercase;color:var(--teca)}
-.tbd{text-decoration:underline dotted 1.5px;text-underline-offset:4px;text-decoration-color:var(--teca)}
-.tag-tbd{display:inline-block;font:600 10px/1 var(--f-text);letter-spacing:.1em;text-transform:uppercase;padding:5px 7px;border:1px dashed currentColor;border-radius:999px;opacity:.75;vertical-align:middle}
-
-/* Botones */
-.btn{display:inline-flex;align-items:center;gap:10px;border:0;cursor:pointer;text-decoration:none;font-weight:600;font-size:15px;padding:14px 22px;border-radius:999px;transition:transform .25s var(--ease),background-color .25s,color .25s,box-shadow .25s}
-.btn:active{transform:scale(.97)}
-.btn-primary{background:var(--teca);color:#fff}
-.btn-primary:hover{background:#8f4e22;box-shadow:0 8px 24px -10px rgba(168,94,42,.8)}
-.btn-ghost{background:transparent;color:inherit;box-shadow:inset 0 0 0 1.5px currentColor}
-.btn-ghost:hover{background:var(--tinta);color:var(--cal);box-shadow:inset 0 0 0 1.5px var(--tinta)}
-.btn .arr{transition:transform .25s var(--ease)}
-.btn:hover .arr{transform:translateX(4px)}
-.btn-wa{background:#1f7a4d;color:#fff}
-.btn-wa:hover{background:#17623d}
-
-/* Cabecera */
-body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:60;background:var(--cal)}
-.top{position:fixed;top:env(safe-area-inset-top,0px);left:0;right:0;z-index:50;transition:background-color .35s,box-shadow .35s,color .35s;color:#fff}
-.top.solid{background:rgba(244,244,241,.92);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);box-shadow:0 1px 0 var(--linea);color:var(--tinta)}
-.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:20px;height:72px}
-.logo{display:flex;align-items:center;gap:10px;text-decoration:none}
-.wm{font:600 26px/1 var(--f-display);letter-spacing:-.03em}.wm b{font-weight:800;color:var(--mimbre)}.top.solid .wm b{color:var(--teca)}
-.logo small{font-size:10px;letter-spacing:.12em;text-transform:uppercase;opacity:.75;line-height:1.2}
-.nav{display:flex;gap:26px;align-items:center}
-.nav a{text-decoration:none;font-size:14.5px;font-weight:500;position:relative;padding:4px 0}
-.nav a::after{content:"";position:absolute;left:0;right:100%;bottom:-2px;height:1.5px;background:var(--mimbre);transition:right .3s var(--ease)}
-.nav a:hover::after{right:0}
-.top .btn{padding:11px 18px;font-size:14px}
-.burger{display:none;background:none;border:0;width:44px;height:44px;cursor:pointer;position:relative}
-.burger span,.burger span::before,.burger span::after{content:"";position:absolute;left:11px;width:22px;height:1.5px;background:currentColor;transition:transform .3s var(--ease),top .3s}
-.burger span{top:21px}.burger span::before{left:0;top:-7px}.burger span::after{left:0;top:7px}
-.menu-open .burger span{background:transparent}
-.menu-open .burger span::before{top:0;transform:rotate(45deg)}
-.menu-open .burger span::after{top:0;transform:rotate(-45deg)}
-.drawer{position:fixed;inset:0;z-index:45;background:var(--noche);color:#fff;padding:110px var(--gutr) 40px var(--gut);display:flex;flex-direction:column;gap:6px;transform:translateY(-100%);transition:transform .5s var(--ease)}
-.menu-open .drawer{transform:none}
-.drawer a{font:600 34px/1.25 var(--f-display);text-decoration:none}
-.drawer a:hover{color:var(--mimbre)}
-
-/* Rayos de mimbre: el motivo de la marca */
-.rays{position:absolute;pointer-events:none;inset:0;background:repeating-conic-gradient(from -90deg at var(--rx,50%) var(--ry,-10%),rgba(224,169,91,.22) 0deg 1.1deg,transparent 1.1deg 5.5deg);-webkit-mask-image:radial-gradient(circle at var(--rx,50%) var(--ry,-10%),#000 0,#000 18%,transparent 70%);mask-image:radial-gradient(circle at var(--rx,50%) var(--ry,-10%),#000 0,#000 18%,transparent 70%)}
-
-/* Hero */
-.hero{position:relative;min-height:min(860px,100svh);display:flex;align-items:flex-end;color:#fff;overflow:hidden;background:var(--noche)}
-.hero-media{position:absolute;inset:0}
-.hero-media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:opacity 1.1s var(--ease),transform 8s linear}
-.hero-media img.off{opacity:0}
-.hero-media::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(23,19,15,.55) 0%,rgba(23,19,15,.05) 30%,rgba(23,19,15,.25) 55%,rgba(23,19,15,.85) 100%)}
-.hero .rays{--rx:30%;--ry:-5%;opacity:0;transition:opacity 1.1s}
-.is-night .hero .rays{opacity:1}
-.hero-inner{position:relative;width:100%;padding-block:140px 36px;display:grid;gap:28px}
-.dn{display:inline-flex;background:rgba(255,255,255,.14);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border-radius:999px;padding:4px;width:max-content;position:relative}
-.dn button{position:relative;z-index:1;background:none;border:0;padding:8px 16px;border-radius:999px;cursor:pointer;font-size:13.5px;font-weight:600;display:flex;gap:8px;align-items:center;color:#fff;transition:color .3s}
-.dn .pill{position:absolute;top:4px;bottom:4px;left:4px;width:calc(50% - 4px);background:#fff;border-radius:999px;transition:transform .45s var(--ease)}
-.is-night .dn .pill{transform:translateX(100%);background:var(--mimbre)}
-.dn button[aria-pressed="true"]{color:var(--tinta)}
-.hero h1{font-size:clamp(42px,7.4vw,104px);font-weight:600;max-width:12ch}
-.hero h1 em{font-style:normal;color:var(--mimbre);transition:color .6s}
-.is-day .hero h1 em{color:#fff;text-decoration:underline;text-decoration-color:var(--mimbre);text-decoration-thickness:4px;text-underline-offset:10px}
-.hero-sub{max-width:46ch;font-size:clamp(16px,1.6vw,19px);opacity:.92}
-
-/* Barra de consulta */
-.ask{background:var(--blanco);color:var(--tinta);border-radius:20px;padding:10px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr)) auto;gap:6px;box-shadow:0 30px 60px -30px rgba(0,0,0,.6);max-width:980px}
-.ask label{display:flex;flex-direction:column;gap:2px;padding:10px 14px;border-radius:12px;transition:background-color .2s;min-width:0}
-.ask label:hover,.ask label:focus-within{background:var(--cal)}
-.ask span{font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--manta)}
-.ask input,.ask select{border:0;background:transparent;padding:0;font-size:15.5px;font-weight:500;outline:none;min-width:0;width:100%}
-.ask .btn{align-self:stretch;justify-content:center;border-radius:14px}
-.ask-note{font-size:13px;opacity:.8;margin-top:-14px}
-
-/* Panel de mensaje de WhatsApp */
-.sheet{position:fixed;inset:auto 0 0 0;z-index:80;display:flex;justify-content:center;padding:0 var(--gutr) calc(16px + env(safe-area-inset-bottom,0px)) var(--gut);transform:translateY(110%);visibility:hidden;transition:transform .5s var(--ease),visibility 0s .5s}
-.sheet.open{transform:none;visibility:visible;transition:transform .5s var(--ease)}
-.sheet-card{background:var(--blanco);color:var(--tinta);border-radius:22px;max-width:520px;width:100%;padding:22px;box-shadow:0 30px 80px -20px rgba(0,0,0,.5);display:grid;gap:14px}
-.sheet-head{display:flex;justify-content:space-between;align-items:center;gap:12px}
-.sheet-head h3{font-size:20px}
-.x{background:var(--cal);border:0;width:36px;height:36px;border-radius:50%;cursor:pointer;font-size:18px}
-.bubble{background:#e7f5ea;border-radius:16px 16px 16px 4px;padding:14px 16px;white-space:pre-wrap;font-size:15px;line-height:1.5}
-.sheet small{color:var(--manta);font-size:13px}
-.sheet-actions{display:flex;gap:10px;flex-wrap:wrap}
-
-/* Esenciales */
-.facts{background:var(--blanco);border-bottom:1px solid var(--linea)}
-.facts ul{list-style:none;margin:0;padding:22px 0;display:flex;flex-wrap:wrap;gap:10px 34px;justify-content:space-between}
-.facts li{display:flex;align-items:center;gap:10px;font-size:14.5px;font-weight:500}
-.facts svg{width:22px;height:22px;stroke:var(--teca);fill:none;stroke-width:1.6;flex:none}
-
-/* Secciones */
-section{scroll-margin-top:80px}
-.band{padding-block:clamp(72px,10vw,128px)}
-.head{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:24px 60px;align-items:end;margin-bottom:48px}
-.head h2{font-size:clamp(34px,4.6vw,60px)}
-.head p{color:var(--manta);max-width:52ch}
-
-/* El hotel */
-.about{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:clamp(24px,4vw,56px);align-items:center}
-.about-pics{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:14px;align-items:end}
-.about-pics figure{margin:0;overflow:hidden;border-radius:4px}
-.about-pics figure:first-child{aspect-ratio:3/2}
-.about-pics figure:last-child{aspect-ratio:3/4;transform:translateY(40px)}
-.about-pics img{width:100%;height:100%;object-fit:cover}
-.about-text{display:grid;gap:20px}
-.about-text h2{font-size:clamp(32px,4vw,52px)}
-.about-text p{color:var(--manta)}
-.stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;border-top:1px solid var(--linea);padding-top:20px}
-.stats b{display:block;font:600 34px/1 var(--f-display)}
-.stats span{font-size:13px;color:var(--manta)}
-
-/* Habitaciones */
-.rooms{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:28px}
-.room{background:var(--blanco);border-radius:6px;overflow:hidden;display:flex;flex-direction:column;transition:transform .4s var(--ease),box-shadow .4s}
-.room:hover{transform:translateY(-4px);box-shadow:0 30px 50px -35px rgba(31,35,38,.45)}
-.slider{position:relative;aspect-ratio:4/3;overflow:hidden;background:var(--piedra)}
-.track{display:flex;height:100%;transition:transform .6s var(--ease)}
-.track img{flex:0 0 100%;width:100%;height:100%;object-fit:cover}
-.sl-btn{position:absolute;top:50%;translate:0 -50%;width:42px;height:42px;border-radius:50%;border:0;background:rgba(255,255,255,.9);cursor:pointer;opacity:0;transition:opacity .3s,transform .2s;font-size:18px}
-.sl-btn.prev{left:12px}.sl-btn.next{right:12px}
-.slider:hover .sl-btn,.sl-btn:focus-visible{opacity:1}
-.sl-btn:hover{transform:scale(1.08)}
-.dots{position:absolute;bottom:12px;left:0;right:0;display:flex;justify-content:center;gap:6px}
-.dots i{width:6px;height:6px;border-radius:99px;background:rgba(255,255,255,.55);transition:width .3s,background-color .3s}
-.dots i.on{width:18px;background:#fff}
-.room-body{padding:26px;display:grid;gap:16px;flex:1}
-.room-top{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap}
-.room h3{font-size:28px}
-.room .cap{font-size:13.5px;color:var(--manta)}
-.chips{display:flex;flex-wrap:wrap;gap:8px;list-style:none;margin:0;padding:0}
-.chips li{font-size:13px;padding:6px 11px;border-radius:999px;background:var(--cal)}
-.room-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:auto;padding-top:6px}
-.room-actions .btn{padding:12px 18px;font-size:14px}
-.legend{margin-top:22px;font-size:13px;color:var(--manta)}
-
-/* Día / noche */
-.dnband{background:var(--noche);color:#f3ece2;position:relative;overflow:hidden}
-.dnband .rays{--rx:78%;--ry:-8%}
-.diptych{position:relative;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(16px,3vw,40px);align-items:start}
-.diptych figure{margin:0;display:grid;gap:14px}
-.diptych figure:last-child{margin-top:clamp(40px,8vw,120px)}
-.diptych .ph{overflow:hidden;border-radius:4px;aspect-ratio:4/5}
-.diptych img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s var(--ease)}
-.diptych figure:hover img{transform:scale(1.04)}
-.diptych figcaption{display:grid;gap:4px}
-.diptych figcaption b{font:600 26px/1.1 var(--f-display)}
-.diptych figcaption span{color:#c9bfb1;font-size:15px;max-width:40ch}
-.dn-title{position:relative;font-size:clamp(36px,5.4vw,72px);max-width:16ch;margin-bottom:48px}
-.dn-title em{font-style:normal;color:var(--mimbre)}
-
-/* Galería */
-.filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:28px}
-.filters button{border:1.5px solid var(--linea);background:transparent;padding:9px 16px;border-radius:999px;cursor:pointer;font-size:14px;font-weight:500;transition:all .25s}
-.filters button:hover{border-color:var(--tinta)}
-.filters button[aria-pressed="true"]{background:var(--tinta);color:var(--cal);border-color:var(--tinta)}
-.grid{columns:3 280px;column-gap:14px}
-.grid button{display:block;width:100%;padding:0;border:0;margin:0 0 14px;cursor:zoom-in;break-inside:avoid;border-radius:4px;overflow:hidden;position:relative;background:var(--piedra)}
-.grid img{width:100%;height:auto;transition:transform .7s var(--ease),filter .4s}
-.grid button:hover img{transform:scale(1.035)}
-.grid button span{position:absolute;left:10px;bottom:10px;background:rgba(23,19,15,.7);color:#fff;font-size:12px;padding:5px 9px;border-radius:99px;opacity:0;transform:translateY(6px);transition:all .3s var(--ease)}
-.grid button:hover span,.grid button:focus-visible span{opacity:1;transform:none}
-.grid button.hide{display:none}
-
-.lb{position:fixed;inset:0;z-index:90;background:rgba(15,12,10,.94);display:grid;place-items:center;padding:60px var(--gutr) 60px var(--gut);opacity:0;pointer-events:none;transition:opacity .35s}
-.lb.open{opacity:1;pointer-events:auto}
-.lb img{max-height:80vh;width:auto;border-radius:4px;box-shadow:0 30px 80px rgba(0,0,0,.5)}
-.lb p{color:#ddd;text-align:center;margin-top:14px;font-size:14px}
-.lb .x{position:absolute;top:calc(16px + env(safe-area-inset-top,0px));right:var(--gutr);background:#fff}
-.lb .nav-lb{position:absolute;top:50%;translate:0 -50%;background:rgba(255,255,255,.12);color:#fff;border:0;width:48px;height:48px;border-radius:50%;cursor:pointer;font-size:20px}
-.lb .nav-lb:hover{background:rgba(255,255,255,.25)}
-.lb .l{left:var(--gut)}.lb .r{right:var(--gutr)}
-
-/* Ubicación */
-.loc{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(24px,4vw,56px);align-items:stretch}
-.loc{align-items:start}
-.map{position:sticky;top:96px;border-radius:6px;background:var(--noche);overflow:hidden;display:grid;align-content:center;padding:10px 10px 16px;min-width:0}
-@media (max-width:960px){.map{position:relative;top:auto}}
-.map::before{content:"";position:absolute;inset:0;background:repeating-conic-gradient(from -90deg at 56% 49%,rgba(224,169,91,.10) 0deg 1deg,transparent 1deg 6deg);-webkit-mask-image:radial-gradient(circle at 56% 49%,#000 0,transparent 60%);mask-image:radial-gradient(circle at 56% 49%,#000 0,transparent 60%)}
-.map svg{position:relative;width:100%;height:auto;display:block}
-.map .sea{font:600 10.5px var(--f-text);letter-spacing:.22em;fill:#6f8aa3}
-.map .ray{stroke:#E0A95B;stroke-width:1.4;stroke-dasharray:4 6;fill:none;opacity:.45;transition:opacity .3s,stroke-width .3s}
-.map .ray.on{opacity:1;stroke-width:2.4;stroke-dasharray:none}
-.map .node{cursor:pointer;outline:none}
-.map .hit{fill:transparent}
-.map .dot{fill:#F4F4F1;stroke:#E0A95B;stroke-width:2;transition:r .25s,fill .25s}
-.map .node text{font:500 13.5px var(--f-text);fill:#e9e2d6;transition:fill .25s}
-.map .node:hover .dot,.map .node:focus-visible .dot,.map .node.on .dot{r:9;fill:#E0A95B}
-.map .node:hover text,.map .node:focus-visible text,.map .node.on text{fill:#E0A95B}
-.map .hdot{fill:#E0A95B}
-.map .htxt{font:600 17px var(--f-display);fill:#fff}
-.map .pulse{fill:none;stroke:#E0A95B;stroke-width:2;transform-origin:336px 214px;transform-box:view-box;animation:pulse 2.4s infinite}
-@keyframes pulse{from{transform:scale(.8);opacity:.9}to{transform:scale(3);opacity:0}}
-.map-cap{position:relative;color:#a59c8f;font-size:12.5px;text-align:center;margin-top:4px}
-.map-btns{display:flex;gap:10px;flex-wrap:wrap}
-.places{list-style:none;margin:0;padding:0;display:grid;border-top:1px solid var(--linea)}
-.places li{border-bottom:1px solid var(--linea)}
-.places a{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:0 16px;padding:14px 4px;text-decoration:none;border-radius:6px;transition:background-color .25s,padding .25s}
-.places a:hover,.places a.on{background:var(--blanco);padding-left:12px;padding-right:12px}
-.places b{font-weight:600}
-.places small{grid-column:1;color:var(--manta);font-size:13.5px}
-.places span{grid-column:2;grid-row:1/3;align-self:center;color:var(--teca);font-weight:600;font-size:13.5px;white-space:nowrap}
-.info{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px 20px;background:var(--blanco);border-radius:6px;padding:18px 20px}
-.info div{display:grid;gap:2px;min-width:0}.info b{font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--teca)}.info span{font-size:14.5px}
-.loc-text{display:grid;gap:22px;align-content:start}
-
-/* Contacto */
-.contact{background:var(--tinta);color:#f1efe9}
-.contact .eyebrow{color:var(--mimbre)}
-.cgrid{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(28px,5vw,72px)}
-.cgrid h2{font-size:clamp(36px,4.8vw,64px)}
-.channels{display:grid;gap:12px;margin-top:28px}
-.channel{display:flex;gap:14px;align-items:center;padding:16px 18px;border:1px solid rgba(255,255,255,.14);border-radius:14px}
-.channel svg{width:22px;height:22px;stroke:var(--mimbre);fill:none;stroke-width:1.6;flex:none}
-.channel div{display:grid;min-width:0}
-.channel small{opacity:.65;font-size:12.5px}
-form.cf{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
-.cf .full{grid-column:1/-1}
-.cf label{display:grid;gap:6px;font-size:13px;font-weight:500;color:#cfcac0;min-width:0}
-.cf input,.cf select,.cf textarea{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.16);border-radius:12px;padding:13px 14px;color:#fff;font-size:15px;outline:none;transition:border-color .2s,background-color .2s;width:100%;min-width:0}
-.cf select option{color:var(--tinta)}
-.cf input:focus,.cf select:focus,.cf textarea:focus{border-color:var(--mimbre);background:rgba(255,255,255,.1)}
-.cf textarea{min-height:110px;resize:vertical}
-.cf .row{display:flex;gap:12px;align-items:center;flex-wrap:wrap}
-.cf-note{font-size:13px;opacity:.7}
-
-footer{background:var(--noche);color:#b9b0a4;font-size:14px}
-footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;padding-block:36px calc(36px + env(safe-area-inset-bottom,0px))}
-
-/* Barra móvil fija */
-.mbar{display:none}
-
-/* Aparición progresiva (estado de reposo visible) */
-.rv{transition:transform .9s var(--ease),opacity .9s var(--ease)}
-.js .rv:not(.in){transform:translateY(22px)}
-
-@media (max-width:960px){
-  .nav,.top .btn{display:none}
-  .burger{display:block}
-  .ask{grid-template-columns:repeat(2,minmax(0,1fr))}
-  .ask .btn{grid-column:1/-1;padding:16px}
-  .head,.about,.loc,.cgrid{grid-template-columns:minmax(0,1fr)}
-  .rooms{grid-template-columns:minmax(0,1fr)}
-  .about-pics figure:last-child{transform:none}
-}
-@media (max-width:600px){
-  .facts ul{justify-content:flex-start;gap:12px 20px}
-  .facts li{width:calc(50% - 10px);font-size:13.5px}
-  .ask{grid-template-columns:minmax(0,1fr)}
-  .ask label{padding:8px 12px}
-  .diptych{grid-template-columns:minmax(0,1fr)}
-  .diptych figure:last-child{margin-top:0}
-  form.cf{grid-template-columns:minmax(0,1fr)}
-  .stats b{font-size:26px}
-  .hero-inner{padding-block:120px 24px}
-  .mbar{display:grid;grid-template-columns:1fr 1.4fr;gap:8px;position:fixed;left:0;right:0;bottom:0;z-index:40;padding:10px var(--gutr) calc(10px + env(safe-area-inset-bottom,0px)) var(--gut);background:rgba(244,244,241,.95);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);box-shadow:0 -1px 0 var(--linea);transform:translateY(100%);transition:transform .4s var(--ease)}
-  .mbar.show{transform:none}
-  .mbar .btn{justify-content:center;padding:13px 10px;font-size:14.5px}
-  footer .wrap{padding-bottom:calc(96px + env(safe-area-inset-bottom,0px))}
-}
-@media (prefers-reduced-motion:reduce){
-  *,*::before,*::after{transition-duration:.01ms!important;animation:none!important;scroll-behavior:auto!important}
-  .js .rv:not(.in){transform:none;opacity:1}
-}
-</style>
+</script>
 </head>
 <body class="is-night">
-
+<a class="skip" href="#main">Saltar al contenido</a>
 <header class="top" id="top">
   <div class="wrap">
-    <a class="logo" href="#inicio" aria-label="Inicio">
+    <a class="logo" href="#inicio" aria-label="De Luz Hotel, inicio">
       <span class="wm">De<b>luz</b></span>
-      <small>Hotel<br>logo provisional</small>
+      <small>Hotel<br>El Limón · Samaná</small>
     </a>
     <nav class="nav" aria-label="Principal">
       <a href="#habitaciones">Habitaciones</a>
@@ -319,7 +102,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;
       <a href="#contacto">Contacto</a>
     </nav>
     <a class="btn btn-primary" href="#consulta">Consultar disponibilidad</a>
-    <button class="burger" id="burger" aria-label="Abrir menú" aria-expanded="false"><span></span></button>
+    <button class="burger" id="burger" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="drawer"><span></span></button>
   </div>
 </header>
 <nav class="drawer" id="drawer" aria-label="Menú móvil">
@@ -330,12 +113,11 @@ footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;
   <a href="#contacto">Contacto</a>
 </nav>
 
-<main>
-<!-- HERO -->
+<main id="main">
 <section class="hero" id="inicio">
   <div class="hero-media">
-    <img id="heroNight" src="img/habitacion-doble-noche.webp" alt="Habitación con dos camas dobles iluminada por lámparas de mimbre">
-    <img id="heroDay" class="off" src="img/fachada-puertas.webp" alt="Fachada blanca del hotel con puertas de madera y árboles jóvenes">
+    <img src="img/habitacion-doble-noche.webp" srcset="img/800/habitacion-doble-noche.webp 800w, img/habitacion-doble-noche.webp 1600w" sizes="100vw" width="1600" height="1067" alt="Habitación con dos camas queen iluminada por lámparas de mimbre" fetchpriority="high" id="heroNight">
+    <img src="img/fachada-puertas.webp" srcset="img/800/fachada-puertas.webp 800w, img/fachada-puertas.webp 1600w" sizes="100vw" width="1600" height="1067" alt="Fachada blanca de De Luz Hotel con puertas de madera y árboles jóvenes" loading="lazy" decoding="async" class="off" id="heroDay">
   </div>
   <div class="rays" aria-hidden="true"></div>
   <div class="wrap hero-inner" id="consulta">
@@ -345,38 +127,31 @@ footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;
       <button type="button" data-mode="night" aria-pressed="true">◐ De noche</button>
     </div>
     <h1 id="heroTitle">Cuartos claros de día, <em>cálidos</em> de noche.</h1>
-    <p class="hero-sub" id="heroSub">Deluz Hotel: habitaciones y estudios con cocineta en El Limón, Samaná. Aire acondicionado, camas dobles y luz de mimbre para cerrar el día.</p>
-    <form class="ask" id="askForm" aria-label="Consultar disponibilidad">
-      <label><span>Llegada</span><input type="date" id="askIn" required></label>
-      <label><span>Salida</span><input type="date" id="askOut" required></label>
-      <label><span>Huéspedes</span>
-        <select id="askGuests"><option>1 persona</option><option selected>2 personas</option><option>3 personas</option><option>4 personas</option></select>
-      </label>
-      <button class="btn btn-wa" type="submit">Consultar por WhatsApp <span class="arr">→</span></button>
+    <p class="hero-sub">De Luz Hotel: habitaciones y estudios con cocineta en El Limón, Samaná. Aire acondicionado, piscina y luz de mimbre para cerrar el día.</p>
+    <form class="ask" data-ask aria-label="Consultar disponibilidad">
+      <label><span>Llegada</span><input type="date" name="llegada" data-date="in" required></label>
+      <label><span>Salida</span><input type="date" name="salida" data-date="out" required></label>
+      <label><span>Huéspedes</span><select name="huespedes"><option>1 persona</option><option selected>2 personas</option><option>3 personas</option><option>4 personas</option></select></label>
+      <button class="btn btn-wa" type="submit">Consultar por WhatsApp <span class="arr" aria-hidden="true">→</span></button>
     </form>
     <p class="ask-note">Te respondemos con disponibilidad y precio. Sin pago en línea.</p>
   </div>
 </section>
 
-<!-- ESENCIALES -->
 <div class="facts">
   <div class="wrap">
     <ul>
-      <li><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="7" rx="1.5"/><path d="M6 16v3M12 16v4M18 16v3"/></svg>Aire acondicionado</li>
-      <li><svg viewBox="0 0 24 24"><path d="M3 18v-6a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v6M3 15h18M6 10V7a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v3M12 10V7a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v3"/></svg>Dos camas dobles</li>
-      <li><svg viewBox="0 0 24 24"><rect x="4" y="11" width="16" height="9" rx="1"/><path d="M4 15h16M8 7h3M7 4v3M10 4v3M15 4c0 2 2 2 2 4"/></svg>Estudios con cocineta</li>
-      <li><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="12" rx="1.5"/><path d="M9 21h6M12 17v4"/></svg>TV</li>
-      <li><svg viewBox="0 0 24 24"><path d="M4 12h16v3a5 5 0 0 1-5 5H9a5 5 0 0 1-5-5zM6 12V5a2 2 0 0 1 4 0"/></svg>Baño con ducha</li>
-      <li><svg viewBox="0 0 24 24"><path d="M2 18c2 0 2-1.5 4-1.5s2 1.5 4 1.5 2-1.5 4-1.5 2 1.5 4 1.5 2-1.5 4-1.5M8 15V5a2 2 0 0 1 4 0M14 15V5a2 2 0 0 1 4 0M8 8h10M8 12h10"/></svg>Piscina al aire libre</li>
-      <li><svg viewBox="0 0 24 24"><path d="M2 9a15 15 0 0 1 20 0M5.5 12.5a10 10 0 0 1 13 0M9 16a5 5 0 0 1 6 0"/><circle cx="12" cy="19" r="1"/></svg>Wifi gratis</li>
-      <li><svg viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M9 16V8h4a2.5 2.5 0 0 1 0 5H9"/></svg>Parqueo gratis</li>
-      <li><svg viewBox="0 0 24 24"><path d="M6 8v8M18 8v8M3 10v4M21 10v4M6 12h12"/></svg>Gimnasio</li>
-      <li><svg viewBox="0 0 24 24"><circle cx="7" cy="8" r="1.6"/><circle cx="12" cy="6" r="1.6"/><circle cx="17" cy="8" r="1.6"/><path d="M12 11c-3 0-5.5 4-5.5 6a2 2 0 0 0 2.5 2c1.3-.4 2-.6 3-.6s1.7.2 3 .6a2 2 0 0 0 2.5-2c0-2-2.5-6-5.5-6z"/></svg>Admite mascotas</li>
+      <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 18c2 0 2-1.5 4-1.5s2 1.5 4 1.5 2-1.5 4-1.5 2 1.5 4 1.5 2-1.5 4-1.5M8 15V5a2 2 0 0 1 4 0M14 15V5a2 2 0 0 1 4 0M8 8h10M8 12h10"/></svg>Piscina al aire libre</li>
+      <li><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="7" rx="1.5"/><path d="M6 16v3M12 16v4M18 16v3"/></svg>Aire acondicionado</li>
+      <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 9a15 15 0 0 1 20 0M5.5 12.5a10 10 0 0 1 13 0M9 16a5 5 0 0 1 6 0"/><circle cx="12" cy="19" r="1"/></svg>Wifi gratis</li>
+      <li><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M9 16V8h4a2.5 2.5 0 0 1 0 5H9"/></svg>Parqueo gratis</li>
+      <li><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="11" width="16" height="9" rx="1"/><path d="M4 15h16M8 7h3M7 4v3M10 4v3M15 4c0 2 2 2 2 4"/></svg>Estudios con cocineta</li>
+      <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 8v8M18 8v8M3 10v4M21 10v4M6 12h12"/></svg>Gimnasio</li>
+      <li><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="7" cy="8" r="1.6"/><circle cx="12" cy="6" r="1.6"/><circle cx="17" cy="8" r="1.6"/><path d="M12 11c-3 0-5.5 4-5.5 6a2 2 0 0 0 2.5 2c1.3-.4 2-.6 3-.6s1.7.2 3 .6a2 2 0 0 0 2.5-2c0-2-2.5-6-5.5-6z"/></svg>Admite mascotas</li>
     </ul>
   </div>
 </div>
 
-<!-- HABITACIONES -->
 <section class="band" id="habitaciones">
   <div class="wrap">
     <div class="head rv">
@@ -387,50 +162,49 @@ footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;
       <article class="room rv">
         <div class="slider" data-slider>
           <div class="track">
-            <img src="img/habitacion-doble-amplia.webp" alt="Habitación doble con dos camas y lámparas de mimbre" loading="lazy">
-            <img src="img/lamparas-contrapicado.webp" alt="Lámparas de mimbre y aire acondicionado" loading="lazy">
-            <img src="img/bano-lavabo.webp" alt="Baño con lavabo flotante y paredes de porcelanato imitación madera" loading="lazy">
+            <img src="img/habitacion-doble-amplia.webp" srcset="img/800/habitacion-doble-amplia.webp 800w, img/habitacion-doble-amplia.webp 1600w" sizes="(max-width:960px) 100vw, 50vw" width="1600" height="1040" alt="Habitación doble con dos camas queen y lámparas de mimbre" loading="lazy" decoding="async">
+            <img src="img/habitacion-doble-noche.webp" srcset="img/800/habitacion-doble-noche.webp 800w, img/habitacion-doble-noche.webp 1600w" sizes="(max-width:960px) 100vw, 50vw" width="1600" height="1067" alt="Habitación doble iluminada de noche, con TV y puerta de madera" loading="lazy" decoding="async">
+            <img src="img/lamparas-contrapicado.webp" srcset="img/800/lamparas-contrapicado.webp 800w, img/lamparas-contrapicado.webp 1600w" sizes="(max-width:960px) 100vw, 50vw" width="1600" height="1067" alt="Lámparas de mimbre y aire acondicionado" loading="lazy" decoding="async">
+            <img src="img/lampara-mimbre.webp" srcset="img/800/lampara-mimbre.webp 534w, img/lampara-mimbre.webp 1067w" sizes="(max-width:960px) 100vw, 50vw" width="1067" height="1600" alt="Lámpara de mimbre junto a la mesita flotante" loading="lazy" decoding="async">
           </div>
           <button class="sl-btn prev" type="button" aria-label="Foto anterior">‹</button>
           <button class="sl-btn next" type="button" aria-label="Foto siguiente">›</button>
-          <div class="dots"></div>
+          <div class="dots" aria-hidden="true"></div>
         </div>
         <div class="room-body">
-          <div class="room-top"><h3>Habitación Doble</h3><span class="cap tbd">Hasta 4 personas</span></div>
-          <ul class="chips"><li>2 camas queen</li><li>Aire acondicionado</li><li>TV</li><li>Perchero con repisa</li><li class="tbd">Baño privado</li></ul>
+          <div class="room-top"><h3><a href="habitaciones/doble/index.html">Habitación Doble</a></h3><span class="cap tbd">Capacidad por confirmar</span></div>
+          <ul class="chips"><li>2 camas queen</li><li>Aire acondicionado</li><li>TV</li><li>Perchero con repisa</li></ul>
           <div class="room-actions">
-            <a class="btn btn-primary" href="#consulta" data-room="Habitación Doble">Consultar <span class="arr">→</span></a>
-            <a class="btn btn-ghost" href="#galeria">Ver fotos</a>
+            <a class="btn btn-primary" href="#consulta" data-room="Habitación Doble">Consultar <span class="arr" aria-hidden="true">→</span></a>
+            <a class="btn btn-ghost" href="habitaciones/doble/index.html">Ver habitación</a>
           </div>
         </div>
       </article>
       <article class="room rv">
         <div class="slider" data-slider>
           <div class="track">
-            <img src="img/estudio-cocineta.webp" alt="Estudio con dos camas, cocineta y mesa junto al ventanal" loading="lazy">
-            <img src="img/cocineta-negra.webp" alt="Cocineta con muebles negros, hornillas de gas y nevera" loading="lazy">
-            <img src="img/mesa-luz-dia.webp" alt="Mesa de madera con cuatro sillas y luz natural" loading="lazy">
-            <img src="img/cocineta-azul.webp" alt="Cocineta azul frente a un ventanal con palmeras" loading="lazy">
+            <img src="img/estudio-cocineta.webp" srcset="img/800/estudio-cocineta.webp 800w, img/estudio-cocineta.webp 1600w" sizes="(max-width:960px) 100vw, 50vw" width="1600" height="1009" alt="Estudio con dos camas queen, cocineta y mesa junto al ventanal" loading="lazy" decoding="async">
+            <img src="img/cocineta-negra.webp" srcset="img/800/cocineta-negra.webp 534w, img/cocineta-negra.webp 1067w" sizes="(max-width:960px) 100vw, 50vw" width="1067" height="1600" alt="Cocineta con hornillas de gas, fregadero y nevera" loading="lazy" decoding="async">
+            <img src="img/habitacion-camas-detalle.webp" srcset="img/800/habitacion-camas-detalle.webp 534w, img/habitacion-camas-detalle.webp 1067w" sizes="(max-width:960px) 100vw, 50vw" width="1067" height="1600" alt="Camas queen con cojines y mesita flotante" loading="lazy" decoding="async">
+            <img src="img/mesa-luz-dia.webp" srcset="img/800/mesa-luz-dia.webp 534w, img/mesa-luz-dia.webp 1067w" sizes="(max-width:960px) 100vw, 50vw" width="1067" height="1600" alt="Mesa de madera con cuatro sillas y luz natural" loading="lazy" decoding="async">
           </div>
           <button class="sl-btn prev" type="button" aria-label="Foto anterior">‹</button>
           <button class="sl-btn next" type="button" aria-label="Foto siguiente">›</button>
-          <div class="dots"></div>
+          <div class="dots" aria-hidden="true"></div>
         </div>
         <div class="room-body">
-          <div class="room-top"><h3>Estudio con cocineta</h3><span class="cap tbd">Hasta 4 personas</span></div>
-          <ul class="chips"><li>2 camas queen</li><li>Cocineta a gas</li><li>Nevera</li><li>Mesa para 4</li><li>Ventanal con vegetación</li></ul>
+          <div class="room-top"><h3><a href="habitaciones/estudio/index.html">Estudio con cocineta</a></h3><span class="cap tbd">Capacidad por confirmar</span></div>
+          <ul class="chips"><li>2 camas queen</li><li>Cocineta a gas</li><li>Nevera</li><li>Mesa para 4</li></ul>
           <div class="room-actions">
-            <a class="btn btn-primary" href="#consulta" data-room="Estudio con cocineta">Consultar <span class="arr">→</span></a>
-            <a class="btn btn-ghost" href="#galeria">Ver fotos</a>
+            <a class="btn btn-primary" href="#consulta" data-room="Estudio con cocineta">Consultar <span class="arr" aria-hidden="true">→</span></a>
+            <a class="btn btn-ghost" href="habitaciones/estudio/index.html">Ver habitación</a>
           </div>
         </div>
       </article>
     </div>
-    <p class="legend"><span class="tbd">Texto con subrayado punteado</span> = dato por confirmar con el hotel.</p>
   </div>
 </section>
 
-<!-- DÍA / NOCHE -->
 <section class="band dnband" aria-labelledby="dnTitle">
   <div class="rays" aria-hidden="true"></div>
   <div class="wrap">
@@ -438,39 +212,32 @@ footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;
     <h2 class="dn-title rv" id="dnTitle">De día entra el verde. De noche, <em>la luz del mimbre</em>.</h2>
     <div class="diptych">
       <figure class="rv">
-        <div class="ph"><img src="img/cocineta-azul.webp" alt="Ventanal con cortinas blancas y palmeras al fondo" loading="lazy"></div>
-        <figcaption><b>Mañana</b><span>Ventanales amplios, cortinas de lino y palmeras al otro lado del vidrio.</span></figcaption>
+        <div class="ph"><img src="img/cocineta-azul.webp" srcset="img/800/cocineta-azul.webp 800w, img/cocineta-azul.webp 1600w" sizes="(max-width:600px) 100vw, 50vw" width="1600" height="1067" alt="Ventanal con cortinas blancas y palmeras al fondo" loading="lazy" decoding="async"></div>
+        <figcaption><b>Mañana</b><span>Ventanales amplios, cortinas claras y palmeras al otro lado del vidrio.</span></figcaption>
       </figure>
       <figure class="rv">
-        <div class="ph"><img src="img/lampara-mimbre.webp" alt="Lámpara de mimbre proyectando rayos de luz sobre la pared" loading="lazy"></div>
-        <figcaption><b>Noche</b><span>Lámparas tejidas a mano que dibujan rayos de luz cálida sobre la pared.</span></figcaption>
+        <div class="ph"><img src="img/lampara-mimbre.webp" srcset="img/800/lampara-mimbre.webp 534w, img/lampara-mimbre.webp 1067w" sizes="(max-width:600px) 100vw, 50vw" width="1067" height="1600" alt="Lámpara de mimbre proyectando rayos de luz sobre la pared" loading="lazy" decoding="async"></div>
+        <figcaption><b>Noche</b><span>Lámparas tejidas que dibujan rayos de luz cálida sobre la pared.</span></figcaption>
       </figure>
     </div>
   </div>
 </section>
 
-<!-- EL HOTEL -->
 <section class="band" id="hotel">
   <div class="wrap about">
     <div class="about-pics rv">
-      <figure><img src="img/fachada-puertas.webp" alt="Fachada del hotel" loading="lazy"></figure>
-      <figure><img src="img/escalera.webp" alt="Escalera interior con paredes blancas" loading="lazy"></figure>
+      <figure><img src="img/fachada-puertas.webp" srcset="img/800/fachada-puertas.webp 800w, img/fachada-puertas.webp 1600w" sizes="(max-width:960px) 60vw, 35vw" width="1600" height="1067" alt="Fachada de De Luz Hotel" loading="lazy" decoding="async"></figure>
+      <figure><img src="img/escalera.webp" srcset="img/800/escalera.webp 600w, img/escalera.webp 1200w" sizes="(max-width:960px) 40vw, 22vw" width="1200" height="1600" alt="Escalera interior con paredes blancas" loading="lazy" decoding="async"></figure>
     </div>
     <div class="about-text rv">
       <p class="eyebrow">El hotel</p>
       <h2>Blanco, madera y vegetación</h2>
-      <p>Un edificio de tres plantas con muros encalados, ventanales de marco negro y puertas de madera que se abren a un jardín joven.</p>
-      <p class="tbd">[Historia del hotel: años en la zona, quién lo atiende y qué lo hace conocido. Pendiente de la entrevista.]</p>
-      <div class="stats">
-        <div><b class="tbd">—</b><span>años de trayectoria</span></div>
-        <div><b class="tbd">—</b><span>habitaciones</span></div>
-        <div><b class="tbd">—</b><span>valoración huéspedes</span></div>
-      </div>
+      <p>Un edificio de tres plantas con muros encalados, ventanales de marco negro y puertas de madera que se abren a un jardín joven. Tiene piscina al aire libre, terraza, gimnasio y parrillas para los huéspedes.</p>
+      <p class="tbd">[Historia del hotel: años en la zona, quién lo atiende y qué lo hace conocido. Pendiente.]</p>
     </div>
   </div>
 </section>
 
-<!-- GALERÍA -->
 <section class="band" id="galeria" style="background:var(--blanco)">
   <div class="wrap">
     <div class="head rv">
@@ -484,29 +251,57 @@ footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;
       <button type="button" data-f="ban" aria-pressed="false">Baños</button>
       <button type="button" data-f="edi" aria-pressed="false">Edificio</button>
     </div>
-    <div class="grid" id="grid"></div>
+    <div class="grid" data-gallery>
+      <button type="button" data-c="hab" data-full="img/habitacion-doble-amplia.webp"><img src="img/habitacion-doble-amplia.webp" srcset="img/800/habitacion-doble-amplia.webp 800w, img/habitacion-doble-amplia.webp 1600w" sizes="(max-width:600px) 100vw, 33vw" width="1600" height="1040" alt="Habitación doble con dos camas queen" loading="lazy" decoding="async"><span>Habitación doble con dos camas queen</span></button>
+      <button type="button" data-c="coc" data-full="img/estudio-cocineta.webp"><img src="img/estudio-cocineta.webp" srcset="img/800/estudio-cocineta.webp 800w, img/estudio-cocineta.webp 1600w" sizes="(max-width:600px) 100vw, 33vw" width="1600" height="1009" alt="Estudio con cocineta y mesa junto al ventanal" loading="lazy" decoding="async"><span>Estudio con cocineta y mesa junto al ventanal</span></button>
+      <button type="button" data-c="hab" data-full="img/lampara-mimbre.webp"><img src="img/lampara-mimbre.webp" srcset="img/800/lampara-mimbre.webp 534w, img/lampara-mimbre.webp 1067w" sizes="(max-width:600px) 100vw, 33vw" width="1067" height="1600" alt="Lámpara de mimbre sobre la cama" loading="lazy" decoding="async"><span>Lámpara de mimbre sobre la cama</span></button>
+      <button type="button" data-c="edi" data-full="img/fachada-puertas.webp"><img src="img/fachada-puertas.webp" srcset="img/800/fachada-puertas.webp 800w, img/fachada-puertas.webp 1600w" sizes="(max-width:600px) 100vw, 33vw" width="1600" height="1067" alt="Fachada blanca con puertas de madera" loading="lazy" decoding="async"><span>Fachada blanca con puertas de madera</span></button>
+      <button type="button" data-c="ban" data-full="img/bano-lavabo.webp"><img src="img/bano-lavabo.webp" srcset="img/800/bano-lavabo.webp 534w, img/bano-lavabo.webp 1067w" sizes="(max-width:600px) 100vw, 33vw" width="1067" height="1600" alt="Baño con lavabo flotante" loading="lazy" decoding="async"><span>Baño con lavabo flotante</span></button>
+      <button type="button" data-c="coc" data-full="img/cocineta-azul.webp"><img src="img/cocineta-azul.webp" srcset="img/800/cocineta-azul.webp 800w, img/cocineta-azul.webp 1600w" sizes="(max-width:600px) 100vw, 33vw" width="1600" height="1067" alt="Cocineta azul frente al ventanal con palmeras" loading="lazy" decoding="async"><span>Cocineta azul frente al ventanal con palmeras</span></button>
+      <button type="button" data-c="hab" data-full="img/habitacion-doble-noche.webp"><img src="img/habitacion-doble-noche.webp" srcset="img/800/habitacion-doble-noche.webp 800w, img/habitacion-doble-noche.webp 1600w" sizes="(max-width:600px) 100vw, 33vw" width="1600" height="1067" alt="Habitación doble de noche" loading="lazy" decoding="async"><span>Habitación doble de noche</span></button>
+      <button type="button" data-c="edi" data-full="img/escalera.webp"><img src="img/escalera.webp" srcset="img/800/escalera.webp 600w, img/escalera.webp 1200w" sizes="(max-width:600px) 100vw, 33vw" width="1200" height="1600" alt="Escalera interior" loading="lazy" decoding="async"><span>Escalera interior</span></button>
+      <button type="button" data-c="coc" data-full="img/cocineta-negra.webp"><img src="img/cocineta-negra.webp" srcset="img/800/cocineta-negra.webp 534w, img/cocineta-negra.webp 1067w" sizes="(max-width:600px) 100vw, 33vw" width="1067" height="1600" alt="Cocineta negra con nevera" loading="lazy" decoding="async"><span>Cocineta negra con nevera</span></button>
+      <button type="button" data-c="ban" data-full="img/bano-ducha.webp"><img src="img/bano-ducha.webp" srcset="img/800/bano-ducha.webp 534w, img/bano-ducha.webp 1067w" sizes="(max-width:600px) 100vw, 33vw" width="1067" height="1600" alt="Baño con ducha a ras de suelo" loading="lazy" decoding="async"><span>Baño con ducha a ras de suelo</span></button>
+      <button type="button" data-c="hab" data-full="img/lamparas-contrapicado.webp"><img src="img/lamparas-contrapicado.webp" srcset="img/800/lamparas-contrapicado.webp 800w, img/lamparas-contrapicado.webp 1600w" sizes="(max-width:600px) 100vw, 33vw" width="1600" height="1067" alt="Lámparas de mimbre y aire acondicionado" loading="lazy" decoding="async"><span>Lámparas de mimbre y aire acondicionado</span></button>
+      <button type="button" data-c="coc" data-full="img/mesa-luz-dia.webp"><img src="img/mesa-luz-dia.webp" srcset="img/800/mesa-luz-dia.webp 534w, img/mesa-luz-dia.webp 1067w" sizes="(max-width:600px) 100vw, 33vw" width="1067" height="1600" alt="Mesa para cuatro con luz natural" loading="lazy" decoding="async"><span>Mesa para cuatro con luz natural</span></button>
+      <button type="button" data-c="hab" data-full="img/habitacion-camas-detalle.webp"><img src="img/habitacion-camas-detalle.webp" srcset="img/800/habitacion-camas-detalle.webp 534w, img/habitacion-camas-detalle.webp 1067w" sizes="(max-width:600px) 100vw, 33vw" width="1067" height="1600" alt="Camas queen con cojines" loading="lazy" decoding="async"><span>Camas queen con cojines</span></button>
+      <button type="button" data-c="edi" data-full="img/fachada-esquina.webp"><img src="img/fachada-esquina.webp" srcset="img/800/fachada-esquina.webp 647w, img/fachada-esquina.webp 1294w" sizes="(max-width:600px) 100vw, 33vw" width="1294" height="1600" alt="Esquina del edificio" loading="lazy" decoding="async"><span>Esquina del edificio</span></button>
+    </div>
   </div>
 </section>
 
-<!-- UBICACIÓN -->
 <section class="band" id="ubicacion">
   <div class="wrap loc">
-    <div class="map rv">
-      <svg viewBox="0 0 600 440" role="group" aria-label="Esquema de ubicación de De Luz Hotel y lugares cercanos">
-        <defs><radialGradient id="glow"><stop offset="0" stop-color="#E0A95B" stop-opacity=".55"/><stop offset="1" stop-color="#E0A95B" stop-opacity="0"/></radialGradient></defs>
-        <text x="300" y="30" text-anchor="middle" class="sea">OCÉANO ATLÁNTICO</text>
-        <text x="300" y="424" text-anchor="middle" class="sea">BAHÍA DE SAMANÁ</text>
-        <text x="575" y="30" text-anchor="end" class="sea">N ↑</text>
-        <path class="ray" data-p="salto" d="M336 214 L292 318"/><path class="ray" data-p="moron" d="M336 214 L372 84"/><path class="ray" data-p="terrenas" d="M336 214 L132 128"/><path class="ray" data-p="samana" d="M336 214 L500 338"/><path class="ray" data-p="aero" d="M336 214 L96 290"/>
-        <circle cx="336" cy="214" r="90" fill="url(#glow)"/>
-        <circle cx="336" cy="214" r="14" class="pulse"/>
-        <a class="node" data-p="salto" href="https://www.google.com/maps/dir/?api=1&amp;origin=19.2942143%2C-69.4327929&amp;destination=Salto+El+Lim%C3%B3n%2C+Saman%C3%A1&amp;travelmode=driving" target="_blank" rel="noopener" aria-label="Ruta en Google Maps a Salto El Limón"><circle cx="292" cy="318" r="18" class="hit"/><circle cx="292" cy="318" r="6" class="dot"/><text x="292" y="348" text-anchor="middle">Salto El Limón</text></a><a class="node" data-p="moron" href="https://www.google.com/maps/dir/?api=1&amp;origin=19.2942143%2C-69.4327929&amp;destination=Playa+Mor%C3%B3n%2C+El+Lim%C3%B3n%2C+Saman%C3%A1&amp;travelmode=driving" target="_blank" rel="noopener" aria-label="Ruta en Google Maps a Playa Morón"><circle cx="372" cy="84" r="18" class="hit"/><circle cx="372" cy="84" r="6" class="dot"/><text x="372" y="66" text-anchor="middle">Playa Morón</text></a><a class="node" data-p="terrenas" href="https://www.google.com/maps/dir/?api=1&amp;origin=19.2942143%2C-69.4327929&amp;destination=Las+Terrenas%2C+Saman%C3%A1&amp;travelmode=driving" target="_blank" rel="noopener" aria-label="Ruta en Google Maps a Las Terrenas"><circle cx="132" cy="128" r="18" class="hit"/><circle cx="132" cy="128" r="6" class="dot"/><text x="132" y="110" text-anchor="middle">Las Terrenas</text></a><a class="node" data-p="samana" href="https://www.google.com/maps/dir/?api=1&amp;origin=19.2942143%2C-69.4327929&amp;destination=Santa+B%C3%A1rbara+de+Saman%C3%A1&amp;travelmode=driving" target="_blank" rel="noopener" aria-label="Ruta en Google Maps a Santa Bárbara de Samaná"><circle cx="500" cy="338" r="18" class="hit"/><circle cx="500" cy="338" r="6" class="dot"/><text x="500" y="368" text-anchor="middle">Santa Bárbara de Samaná</text></a><a class="node" data-p="aero" href="https://www.google.com/maps/dir/?api=1&amp;origin=19.2942143%2C-69.4327929&amp;destination=Aeropuerto+Internacional+Presidente+Juan+Bosch%2C+El+Catey&amp;travelmode=driving" target="_blank" rel="noopener" aria-label="Ruta en Google Maps a Aeropuerto El Catey"><circle cx="96" cy="290" r="18" class="hit"/><circle cx="96" cy="290" r="6" class="dot"/><text x="96" y="320" text-anchor="middle">Aeropuerto El Catey</text></a>
-        <a class="node hotel" href="https://www.google.com/maps/place/De+Luz+Hotel/@19.2942143,-69.4327929,17z/data=!3m1!4b1!4m6!3m5!1s0x8eaee575bb2371f7:0xa61d08177c4b8f41!8m2!3d19.2942143!4d-69.4327929" target="_blank" rel="noopener" aria-label="Ver De Luz Hotel en Google Maps">
-          <circle cx="336" cy="214" r="12" class="hdot"/><circle cx="336" cy="214" r="4.5" fill="#17130F"/>
-          <text x="358" y="220" class="htxt">De Luz Hotel</text>
-        </a>
-      </svg>
-      <p class="map-cap">Esquema orientativo, no a escala. Las rutas salen del punto exacto del hotel en Google Maps.</p>
+    <div class="map-wrap rv">
+      <div class="map-tabs" role="tablist" aria-label="Tipo de mapa">
+        <button type="button" role="tab" data-tab="google" aria-selected="true">Google Maps</button>
+        <button type="button" role="tab" data-tab="cerca" aria-selected="false">Alrededores</button>
+      </div>
+      <div data-panel="google" role="tabpanel">
+        <div class="gmap">
+          <a class="gmap-ph" href="https://www.google.com/maps/place/De+Luz+Hotel/@19.2942143,-69.4327929,17z/data=!3m1!4b1!4m6!3m5!1s0x8eaee575bb2371f7:0xa61d08177c4b8f41!8m2!3d19.2942143!4d-69.4327929" target="_blank" rel="noopener">Cargando el mapa… Ver en Google Maps ↗</a>
+          <iframe data-src="https://maps.google.com/maps?q=19.2942143,-69.4327929&amp;z=15&amp;hl=es&amp;output=embed" title="Mapa de Google con la ubicación de De Luz Hotel" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+        </div>
+      </div>
+      <div data-panel="cerca" role="tabpanel" hidden>
+        <div class="map">
+          <svg viewBox="0 0 600 440" role="group" aria-label="Esquema de lugares cercanos a De Luz Hotel">
+            <defs><radialGradient id="glow"><stop offset="0" stop-color="#E0A95B" stop-opacity=".55"/><stop offset="1" stop-color="#E0A95B" stop-opacity="0"/></radialGradient></defs>
+            <text x="300" y="30" text-anchor="middle" class="sea">OCÉANO ATLÁNTICO</text>
+            <text x="300" y="424" text-anchor="middle" class="sea">BAHÍA DE SAMANÁ</text>
+            <text x="575" y="30" text-anchor="end" class="sea">N ↑</text>
+            <path class="ray" data-p="salto" d="M336 214 L292 318"/><path class="ray" data-p="moron" d="M336 214 L372 84"/><path class="ray" data-p="terrenas" d="M336 214 L132 128"/><path class="ray" data-p="samana" d="M336 214 L500 338"/><path class="ray" data-p="aero" d="M336 214 L96 290"/>
+            <circle cx="336" cy="214" r="90" fill="url(#glow)"/>
+            <circle cx="336" cy="214" r="14" class="pulse"/>
+            <a class="node" data-p="salto" href="https://www.google.com/maps/dir/?api=1&amp;origin=19.2942143%2C-69.4327929&amp;destination=Salto+El+Lim%C3%B3n%2C+Saman%C3%A1&amp;travelmode=driving" target="_blank" rel="noopener" aria-label="Ruta en Google Maps a Salto El Limón"><circle cx="292" cy="318" r="18" class="hit"/><circle cx="292" cy="318" r="6" class="dot"/><text x="292" y="348" text-anchor="middle">Salto El Limón</text></a><a class="node" data-p="moron" href="https://www.google.com/maps/dir/?api=1&amp;origin=19.2942143%2C-69.4327929&amp;destination=Playa+Mor%C3%B3n%2C+El+Lim%C3%B3n%2C+Saman%C3%A1&amp;travelmode=driving" target="_blank" rel="noopener" aria-label="Ruta en Google Maps a Playa Morón"><circle cx="372" cy="84" r="18" class="hit"/><circle cx="372" cy="84" r="6" class="dot"/><text x="372" y="66" text-anchor="middle">Playa Morón</text></a><a class="node" data-p="terrenas" href="https://www.google.com/maps/dir/?api=1&amp;origin=19.2942143%2C-69.4327929&amp;destination=Las+Terrenas%2C+Saman%C3%A1&amp;travelmode=driving" target="_blank" rel="noopener" aria-label="Ruta en Google Maps a Las Terrenas"><circle cx="132" cy="128" r="18" class="hit"/><circle cx="132" cy="128" r="6" class="dot"/><text x="132" y="110" text-anchor="middle">Las Terrenas</text></a><a class="node" data-p="samana" href="https://www.google.com/maps/dir/?api=1&amp;origin=19.2942143%2C-69.4327929&amp;destination=Santa+B%C3%A1rbara+de+Saman%C3%A1&amp;travelmode=driving" target="_blank" rel="noopener" aria-label="Ruta en Google Maps a Santa Bárbara de Samaná"><circle cx="500" cy="338" r="18" class="hit"/><circle cx="500" cy="338" r="6" class="dot"/><text x="500" y="368" text-anchor="middle">Santa Bárbara de Samaná</text></a><a class="node" data-p="aero" href="https://www.google.com/maps/dir/?api=1&amp;origin=19.2942143%2C-69.4327929&amp;destination=Aeropuerto+Internacional+Presidente+Juan+Bosch%2C+El+Catey&amp;travelmode=driving" target="_blank" rel="noopener" aria-label="Ruta en Google Maps a Aeropuerto El Catey"><circle cx="96" cy="290" r="18" class="hit"/><circle cx="96" cy="290" r="6" class="dot"/><text x="96" y="320" text-anchor="middle">Aeropuerto El Catey</text></a>
+            <a class="node hotel" href="https://www.google.com/maps/place/De+Luz+Hotel/@19.2942143,-69.4327929,17z/data=!3m1!4b1!4m6!3m5!1s0x8eaee575bb2371f7:0xa61d08177c4b8f41!8m2!3d19.2942143!4d-69.4327929" target="_blank" rel="noopener" aria-label="Ver De Luz Hotel en Google Maps">
+              <circle cx="336" cy="214" r="12" class="hdot"/><circle cx="336" cy="214" r="4.5" fill="#17130F"/>
+              <text x="358" y="220" class="htxt">De Luz Hotel</text>
+            </a>
+          </svg>
+          <p class="map-cap">Esquema orientativo, no a escala. Toca un lugar para ver la ruta real.</p>
+        </div>
+      </div>
     </div>
     <div class="loc-text rv">
       <p class="eyebrow">Ubicación</p>
@@ -525,33 +320,32 @@ footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;
         <div><b>Pago</b><span>Se acepta efectivo</span></div>
         <div><b>Traslado</b><span>Aeropuerto, con costo extra</span></div>
       </div>
-      <div class="map-btns"><a class="btn btn-primary" href="https://www.google.com/maps/dir/?api=1&amp;destination=19.2942143%2C-69.4327929" target="_blank" rel="noopener">Cómo llegar <span class="arr">↗</span></a><a class="btn btn-ghost" href="https://www.google.com/maps/place/De+Luz+Hotel/@19.2942143,-69.4327929,17z/data=!3m1!4b1!4m6!3m5!1s0x8eaee575bb2371f7:0xa61d08177c4b8f41!8m2!3d19.2942143!4d-69.4327929" target="_blank" rel="noopener">Ver en Google Maps</a></div>
+      <div class="map-btns"><a class="btn btn-primary" href="https://www.google.com/maps/dir/?api=1&amp;destination=19.2942143%2C-69.4327929" target="_blank" rel="noopener">Cómo llegar <span class="arr" aria-hidden="true">↗</span></a><a class="btn btn-ghost" href="https://www.google.com/maps/place/De+Luz+Hotel/@19.2942143,-69.4327929,17z/data=!3m1!4b1!4m6!3m5!1s0x8eaee575bb2371f7:0xa61d08177c4b8f41!8m2!3d19.2942143!4d-69.4327929" target="_blank" rel="noopener">Ver en Google Maps</a></div>
     </div>
   </div>
 </section>
 
-<!-- CONTACTO -->
 <section class="band contact" id="contacto">
   <div class="wrap cgrid">
     <div class="rv">
       <p class="eyebrow">Reservas y contacto</p>
-      <h2>Escríbenos y te confirmamos al momento</h2>
+      <h2>Escríbenos y te confirmamos disponibilidad</h2>
       <div class="channels">
-        <div class="channel"><svg viewBox="0 0 24 24"><path d="M4 20l1.3-3.9A8 8 0 1 1 8 19z"/></svg><div><b>WhatsApp</b><small>+1 809 484 9331</small></div></div>
-        <div class="channel"><svg viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg><div><b>Teléfono</b><small>+1 809 484 9331</small></div></div>
-        <div class="channel"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg><div><b>Correo</b><small class="tbd">pendiente</small></div></div>
+        <a class="channel" href="https://wa.me/18094849331" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20l1.3-3.9A8 8 0 1 1 8 19z"/></svg><div><b>WhatsApp</b><small>+1 809 484 9331</small></div></a>
+        <a class="channel" href="tel:+18094849331"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg><div><b>Teléfono</b><small>+1 809 484 9331</small></div></a>
+        <div class="channel"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg><div><b>Correo</b><small class="tbd">por confirmar</small></div></div>
       </div>
     </div>
-    <form class="cf rv" id="cf">
-      <label class="full">Nombre<input id="cfName" required placeholder="Tu nombre"></label>
-      <label>Llegada<input type="date" id="cfIn" required></label>
-      <label>Salida<input type="date" id="cfOut" required></label>
-      <label>Habitación<select id="cfRoom"><option>Habitación Doble</option><option>Estudio con cocineta</option><option>No lo sé aún</option></select></label>
-      <label>Huéspedes<select id="cfGuests"><option>1</option><option selected>2</option><option>3</option><option>4</option></select></label>
-      <label class="full">Mensaje (opcional)<textarea id="cfMsg" placeholder="Hora de llegada, preguntas, peticiones especiales…"></textarea></label>
+    <form class="cf rv" data-ask aria-label="Formulario de consulta">
+      <label class="full">Nombre<input name="nombre" id="cfName" autocomplete="name" required placeholder="Tu nombre"></label>
+      <label>Llegada<input type="date" name="llegada" id="cfIn" data-date="in" required></label>
+      <label>Salida<input type="date" name="salida" id="cfOut" data-date="out" required></label>
+      <label>Habitación<select name="habitacion" id="cfRoom"><option>Habitación Doble</option><option>Estudio con cocineta</option><option>No lo sé aún</option></select></label>
+      <label>Huéspedes<select name="huespedes" id="cfGuests"><option>1 persona</option><option selected>2 personas</option><option>3 personas</option><option>4 personas</option></select></label>
+      <label class="full">Mensaje (opcional)<textarea name="mensaje" id="cfMsg" placeholder="Hora de llegada, preguntas, peticiones especiales…"></textarea></label>
       <div class="full row">
-        <button class="btn btn-wa" type="submit">Enviar por WhatsApp <span class="arr">→</span></button>
-        <span class="cf-note">Prepara tu mensaje; no hace reservas automáticas.</span>
+        <button class="btn btn-wa" type="submit">Preparar mensaje de WhatsApp <span class="arr" aria-hidden="true">→</span></button>
+        <span class="cf-note">Revisas el mensaje antes de enviarlo. No se hace ninguna reserva automática.</span>
       </div>
     </form>
   </div>
@@ -559,137 +353,50 @@ footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;
 </main>
 
 <footer>
-  <div class="wrap">
-    <span>© 2026 · Deluz Hotel · República Dominicana</span>
-    <span>Prototipo de diseño · Fotos reales del hotel</span>
+  <div class="wrap foot">
+    <div class="foot-brand">
+      <span class="wm">De<b>luz</b></span>
+      <p>Hotel en El Limón, Samaná. Habitaciones y estudios con cocineta, piscina, wifi y parqueo gratis.</p>
+    </div>
+    <div>
+      <h4>Habitaciones</h4>
+      <ul><li><a href="habitaciones/doble/index.html">Habitación Doble</a></li><li><a href="habitaciones/estudio/index.html">Estudio con cocineta</a></li></ul>
+    </div>
+    <div>
+      <h4>Contacto</h4>
+      <ul><li><a href="https://wa.me/18094849331" target="_blank" rel="noopener">WhatsApp +1 809 484 9331</a></li><li><a href="tel:+18094849331">Llamar +1 809 484 9331</a></li></ul>
+    </div>
+    <div>
+      <h4>Ubicación</h4>
+      <ul><li>El Limón, Samaná 32000</li><li>República Dominicana</li><li><a href="https://www.google.com/maps/place/De+Luz+Hotel/@19.2942143,-69.4327929,17z/data=!3m1!4b1!4m6!3m5!1s0x8eaee575bb2371f7:0xa61d08177c4b8f41!8m2!3d19.2942143!4d-69.4327929" target="_blank" rel="noopener">Ver en Google Maps ↗</a></li></ul>
+    </div>
+  </div>
+  <div class="wrap foot-bottom">
+    <span>© <span data-year>2026</span> De Luz Hotel</span>
+    <a href="#inicio">Volver arriba ↑</a>
   </div>
 </footer>
-
 <div class="mbar" id="mbar">
   <a class="btn btn-ghost" href="#habitaciones">Habitaciones</a>
   <a class="btn btn-wa" href="#consulta">Consultar</a>
 </div>
-
 <div class="sheet" id="sheet" role="dialog" aria-modal="false" aria-labelledby="sheetT">
   <div class="sheet-card">
-    <div class="sheet-head"><h3 id="sheetT">Tu mensaje está listo</h3><button class="x" type="button" id="sheetX" aria-label="Cerrar">×</button></div>
+    <div class="sheet-head"><h3 id="sheetT">Tu mensaje está listo</h3><button class="x" type="button" data-close-sheet aria-label="Cerrar">×</button></div>
     <div class="bubble" id="bubble"></div>
-    <small>Se abrirá WhatsApp con este texto ya escrito para el +1 809 484 9331.</small>
+    <small>Se abrirá WhatsApp con este texto para el +1 809 484 9331. Puedes editarlo antes de enviarlo.</small>
     <div class="sheet-actions">
-      <a class="btn btn-wa" id="waLink" href="https://wa.me/18094849331" target="_blank" rel="noopener">Abrir WhatsApp <span class="arr">→</span></a>
+      <a class="btn btn-wa" id="waLink" href="https://wa.me/18094849331" target="_blank" rel="noopener">Abrir WhatsApp <span class="arr" aria-hidden="true">→</span></a>
       <button class="btn btn-ghost" type="button" id="copyMsg">Copiar mensaje</button>
-      <button class="btn btn-ghost" type="button" id="sheetX2" hidden>Seguir mirando</button>
     </div>
   </div>
 </div>
-
 <div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Foto ampliada">
   <button class="x" type="button" id="lbX" aria-label="Cerrar">×</button>
-  <button class="nav-lb l" type="button" id="lbL" aria-label="Anterior">‹</button>
+  <button class="nav-lb l" type="button" id="lbL" aria-label="Foto anterior">‹</button>
   <figure style="margin:0"><img id="lbImg" alt=""><p id="lbCap"></p></figure>
-  <button class="nav-lb r" type="button" id="lbR" aria-label="Siguiente">›</button>
+  <button class="nav-lb r" type="button" id="lbR" aria-label="Foto siguiente">›</button>
 </div>
-
-<script>
-document.documentElement.classList.add('js');
-const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
-
-/* Cabecera sólida al hacer scroll + barra móvil */
-const hdr=$('#top'), mbar=$('#mbar');
-const onScroll=()=>{const y=scrollY;hdr.classList.toggle('solid',y>40);mbar.classList.toggle('show',y>window.innerHeight*.6)};
-addEventListener('scroll',onScroll,{passive:true});onScroll();
-
-/* Menú móvil */
-const burger=$('#burger');
-burger.addEventListener('click',()=>{const o=document.body.classList.toggle('menu-open');burger.setAttribute('aria-expanded',o);hdr.style.color=o?'#fff':''});
-$$('#drawer a').forEach(a=>a.addEventListener('click',()=>{document.body.classList.remove('menu-open');burger.setAttribute('aria-expanded',false);hdr.style.color=''}));
-
-/* Día / noche */
-const copy={
-  night:{h:'Cuartos claros de día, <em>cálidos</em> de noche.'},
-  day:{h:'Muros blancos, madera y <em>verde</em> alrededor.'}
-};
-function setMode(m){
-  document.body.classList.toggle('is-night',m==='night');document.body.classList.toggle('is-day',m==='day');
-  $('#heroNight').classList.toggle('off',m!=='night');$('#heroDay').classList.toggle('off',m!=='day');
-  $('#heroTitle').innerHTML=copy[m].h;
-  $$('.dn button').forEach(b=>b.setAttribute('aria-pressed',b.dataset.mode===m));
-}
-$$('.dn button').forEach(b=>b.addEventListener('click',()=>setMode(b.dataset.mode)));
-setMode('night');
-
-/* Fechas por defecto */
-const iso=d=>d.toISOString().slice(0,10);
-const t=new Date();t.setDate(t.getDate()+7);const t2=new Date(t);t2.setDate(t.getDate()+2);
-['#askIn','#cfIn'].forEach(s=>{$(s).value=iso(t);$(s).min=iso(new Date())});
-['#askOut','#cfOut'].forEach(s=>{$(s).value=iso(t2)});
-const fmt=v=>{if(!v)return'—';const[y,m,d]=v.split('-');return `${d}/${m}/${y}`};
-
-/* Mensaje de WhatsApp */
-let chosenRoom='';
-$$('[data-room]').forEach(a=>a.addEventListener('click',()=>{chosenRoom=a.dataset.room}));
-function openSheet(txt){$('#bubble').textContent=txt;$('#waLink').href='https://wa.me/18094849331?text='+encodeURIComponent(txt);$('#sheet').classList.add('open')}
-const closeSheet=()=>$('#sheet').classList.remove('open');
-$('#sheetX').onclick=closeSheet;$('#sheetX2').onclick=closeSheet;
-$('#askForm').addEventListener('submit',e=>{e.preventDefault();
-  const n=Math.max(1,Math.round((new Date($('#askOut').value)-new Date($('#askIn').value))/864e5));
-  openSheet(`Hola, Deluz Hotel. Quisiera consultar disponibilidad${chosenRoom?' para la '+chosenRoom:''}.\n\nLlegada: ${fmt($('#askIn').value)}\nSalida: ${fmt($('#askOut').value)} (${n} noche${n>1?'s':''})\nHuéspedes: ${$('#askGuests').value}\n\n¡Gracias!`)});
-$('#cf').addEventListener('submit',e=>{e.preventDefault();
-  const msg=$('#cfMsg').value.trim();
-  openSheet(`Hola, Deluz Hotel. Soy ${$('#cfName').value.trim()}.\nQuisiera reservar: ${$('#cfRoom').value}\n\nLlegada: ${fmt($('#cfIn').value)}\nSalida: ${fmt($('#cfOut').value)}\nHuéspedes: ${$('#cfGuests').value}${msg?'\n\n'+msg:''}`)});
-$('#copyMsg').addEventListener('click',async e=>{const b=e.currentTarget;
-  try{await navigator.clipboard.writeText($('#bubble').textContent);b.textContent='Copiado ✓'}
-  catch{const r=document.createRange();r.selectNodeContents($('#bubble'));const s=getSelection();s.removeAllRanges();s.addRange(r);b.textContent='Texto seleccionado'}
-  setTimeout(()=>b.textContent='Copiar mensaje',1800)});
-
-/* Sliders de habitaciones */
-$$('[data-slider]').forEach(sl=>{
-  const track=sl.querySelector('.track'),n=track.children.length,dots=sl.querySelector('.dots');let i=0;
-  for(let k=0;k<n;k++)dots.appendChild(document.createElement('i'));
-  const go=k=>{i=(k+n)%n;track.style.transform=`translateX(-${i*100}%)`;[...dots.children].forEach((d,j)=>d.classList.toggle('on',j===i))};
-  sl.querySelector('.prev').onclick=()=>go(i-1);sl.querySelector('.next').onclick=()=>go(i+1);
-  let x0=null;sl.addEventListener('touchstart',e=>x0=e.touches[0].clientX,{passive:true});
-  sl.addEventListener('touchend',e=>{if(x0===null)return;const dx=e.changedTouches[0].clientX-x0;if(Math.abs(dx)>40)go(i+(dx<0?1:-1));x0=null});
-  go(0);
-});
-
-/* Galería + visor */
-const photos=[
-  ['habitacion-doble-amplia','hab','Habitación doble'],['estudio-cocineta','coc','Estudio con cocineta'],
-  ['lampara-mimbre','hab','Lámpara de mimbre'],['fachada-puertas','edi','Fachada'],
-  ['bano-lavabo','ban','Baño · lavabo'],['cocineta-azul','coc','Cocineta azul'],
-  ['habitacion-doble-noche','hab','Habitación de noche'],['escalera','edi','Escalera interior'],
-  ['cocineta-negra','coc','Cocineta negra con nevera'],['bano-ducha','ban','Baño · ducha'],
-  ['lamparas-contrapicado','hab','Lámparas y aire acondicionado'],['mesa-luz-dia','coc','Mesa para cuatro'],
-  ['habitacion-camas-detalle','hab','Camas dobles'],['fachada-esquina','edi','Esquina del edificio']
-];
-const grid=$('#grid');
-photos.forEach(([f,c,l],idx)=>{const b=document.createElement('button');b.type='button';b.dataset.c=c;b.dataset.i=idx;
-  b.innerHTML=`<img src="img/${f}.webp" alt="${l}" loading="lazy"><span>${l}</span>`;b.onclick=()=>openLb(idx);grid.appendChild(b)});
-$$('.filters button').forEach(b=>b.addEventListener('click',()=>{
-  $$('.filters button').forEach(x=>x.setAttribute('aria-pressed',x===b));
-  $$('#grid button').forEach(g=>g.classList.toggle('hide',b.dataset.f!=='all'&&g.dataset.c!==b.dataset.f))}));
-let cur=0;const lb=$('#lb');
-const visible=()=>$$('#grid button:not(.hide)').map(b=>+b.dataset.i);
-function show(i){cur=i;const[f,,l]=photos[i];$('#lbImg').src=`img/${f}.webp`;$('#lbImg').alt=l;$('#lbCap').textContent=l}
-function openLb(i){show(i);lb.classList.add('open');$('#lbX').focus()}
-function step(d){const v=visible();show(v[(v.indexOf(cur)+d+v.length)%v.length])}
-$('#lbX').onclick=()=>lb.classList.remove('open');$('#lbL').onclick=()=>step(-1);$('#lbR').onclick=()=>step(1);
-lb.addEventListener('click',e=>{if(e.target===lb)lb.classList.remove('open')});
-addEventListener('keydown',e=>{if(e.key==='Escape'){lb.classList.remove('open');closeSheet()}
-  if(lb.classList.contains('open')){if(e.key==='ArrowRight')step(1);if(e.key==='ArrowLeft')step(-1)}});
-
-/* Mapa: resaltar la ruta al pasar por un lugar */
-$$('[data-p]').forEach(el=>{const k=el.dataset.p;
-  const on=v=>$$('[data-p="'+k+'"]').forEach(x=>x.classList.toggle('on',v));
-  el.addEventListener('mouseenter',()=>on(true));el.addEventListener('mouseleave',()=>on(false));
-  el.addEventListener('focus',()=>on(true));el.addEventListener('blur',()=>on(false));});
-
-/* Aparición progresiva */
-if('IntersectionObserver' in window){
-  const io=new IntersectionObserver(es=>es.forEach(en=>{if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target)}}),{threshold:.12});
-  $$('.rv').forEach(el=>io.observe(el));
-}else $$('.rv').forEach(el=>el.classList.add('in'));
-</script>
+<script src="assets/js/site.js" defer></script>
 </body>
 </html>

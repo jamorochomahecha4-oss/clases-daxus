@@ -8,7 +8,7 @@ Documento de proyecto. Cualquier sesión que trabaje en este repositorio debe le
   1. Descubrimiento ✅
   2. Dirección creativa ✅ (concepto aprobado)
   3. Arquitectura y UX ✅ (propuesta en `propuesta/`)
-  4. Desarrollo de la versión de producción ⏳ siguiente
+  4. Desarrollo de la versión de producción 🔧 en curso (estructura, fichas, SEO y mapa hechos; faltan datos del cliente)
   5. Revisión, optimización y publicación
 - **No inventar** instalaciones, servicios, vistas ni datos. Lo no confirmado se marca con la clase `tbd` (subrayado punteado) o la etiqueta `tag-tbd`.
 - **No usar fotos de stock** como si fueran del hotel. Solo fotos reales (`fotos-originales/`).
@@ -18,12 +18,27 @@ Documento de proyecto. Cualquier sesión que trabaje en este repositorio debe le
 ## Estructura del repositorio
 | Ruta | Qué es |
 |---|---|
-| `index.html` | Página de inicio (prototipo navegable). Es la que se publica. Lleva `noindex` hasta el lanzamiento. |
-| `img/` | Fotos optimizadas para la web (WebP, 1600 px lado mayor, calidad 74). |
-| `fotos-originales/` | Fotos originales en alta resolución, nombradas por espacio. Fuente para recortes nuevos. |
-| `propuesta/index.html` | Propuesta creativa "Luz tejida": concepto, paleta, tipografía, arquitectura y prototipo embebido. Uso interno. |
+| `index.html` | Página de inicio. Lleva `noindex` hasta el lanzamiento. |
+| `habitaciones/doble/index.html` | Ficha de la Habitación Doble (fotos, características, consulta, preguntas frecuentes). |
+| `habitaciones/estudio/index.html` | Ficha del Estudio con cocineta. |
+| `404.html` | Página de error (Cloudflare Pages la usa automáticamente). |
+| `assets/css/site.css` | Todos los estilos. Tokens de color en `:root`. |
+| `assets/js/site.js` | Todos los scripts. **Número de WhatsApp y nombre del hotel en la parte superior** (`WHATSAPP`, `HOTEL`). |
+| `img/` | Fotos web (WebP 1600 px). `img/800/`: versiones para móvil (se sirven con `srcset`). |
+| `fotos-originales/` | Fotos originales en alta resolución. Fuente para recortes nuevos. |
+| `favicon.svg` | Icono provisional (lámpara de mimbre con rayos) hasta que exista logo. |
+| `robots.txt`, `sitemap.xml` | Para buscadores. **Ajustar dominio** al comprarlo. |
+| `_headers` | Caché y cabeceras de seguridad para Cloudflare Pages / Netlify. |
+| `propuesta/index.html` | Propuesta creativa "Luz tejida". Uso interno (bloqueada en `robots.txt`). |
 
 Sitio estático: HTML + CSS + JS sin dependencias ni paso de compilación. Fuentes desde Google Fonts.
+Encabezado, pie, panel de WhatsApp y visor de fotos están repetidos en cada HTML: **si se cambian, cambiarlos en las 4 páginas**.
+
+### Cómo agregar fotos nuevas
+1. Guardar el original en `fotos-originales/nombre-claro.jpg`.
+2. Crear `img/nombre-claro.webp` (1600 px lado mayor, calidad 74) e `img/800/nombre-claro.webp` (800 px, calidad 72).
+3. Usar `<img src="img/x.webp" srcset="img/800/x.webp ANCHO800w, img/x.webp ANCHOw" sizes="…" width height alt loading="lazy">`.
+4. En la galería, cada foto es un `<button data-c="hab|coc|ban|edi" data-full="img/x.webp">` con `<img>` y `<span>` de título.
 
 ## Datos del hotel (verificados)
 - **Nombre:** De Luz Hotel. En plataformas aparece "De Luz Hotel" (separado); el cliente escribió "Deluz". **Confirmar forma oficial.**
@@ -74,16 +89,30 @@ Botones píldora (principal teca, WhatsApp verde, fantasma con borde); flecha qu
 Inicio de una sola página: Portada + consulta → Lo esencial → Habitaciones → De día / de noche → El hotel → Galería → Ubicación → Contacto.
 Páginas aparte (Fase 4): `/habitaciones/doble`, `/habitaciones/estudio`; opcionales `/en`, `/politicas`.
 
-## Pendientes para la Fase 4
-- [ ] Forma oficial del nombre (De Luz / Deluz) y logotipo.
-- [ ] Confirmar WhatsApp en +1 809 484 9331; correo de contacto.
-- [ ] Tipos de habitación (Expedia lista 5), número total (una fuente dice 12) y capacidad de cada tipo.
-- [ ] Baño privado en todas; agua caliente resuelta.
-- [ ] Historia y años de trayectoria.
+## Hecho en la Fase 4
+- [x] Código separado en `assets/css/site.css` y `assets/js/site.js`.
+- [x] Fichas `/habitaciones/doble/` y `/habitaciones/estudio/` con consulta, fotos y preguntas frecuentes (solo datos verificados).
+- [x] Mapa real de Google embebido (carga diferida) + pestaña "Alrededores" con el esquema de rayos.
+- [x] SEO base: títulos y descripciones por página, JSON-LD `Hotel` (sin puntuación) y `BreadcrumbList`, Open Graph, favicon, `robots.txt`, `sitemap.xml`.
+- [x] Imágenes responsive (`srcset` 800/1600, `width`/`height`, `lazy`) y precarga de la portada.
+- [x] Accesibilidad: enlace "Saltar al contenido", foco visible, Escape cierra menú, visor y panel.
+- [x] Página 404 y cabeceras de caché (`_headers`).
+
+## Pendientes (dependen del cliente)
+- [ ] Forma oficial del nombre (De Luz / Deluz) y logotipo. Hoy: SEO usa "De Luz Hotel"; el logotipo provisional dice "Deluz".
+- [ ] Confirmar WhatsApp en +1 809 484 9331; correo de contacto (hoy marcado `tbd`).
+- [ ] Tipos de habitación (Expedia lista 5), número total y **capacidad** de cada tipo (hoy `tbd`).
+- [ ] Baño privado en todas; agua caliente resuelta; hora de check-out; otros métodos de pago.
+- [ ] Historia y años de trayectoria (párrafo `tbd` en "El hotel").
 - [ ] Fotos de piscina (candidata a portada "De día"), gimnasio, terraza, jardín, entrada, entorno.
-- [ ] Insertar mapa interactivo real de Google (iframe) en la sección Ubicación.
-- [ ] SEO: títulos y descripciones, JSON-LD `Hotel`, Open Graph, favicon, `sitemap.xml`, `robots.txt`.
-- [ ] Al lanzar: quitar `<meta name="robots" content="noindex">` de `index.html`.
+- [ ] Versión en inglés (decidir).
+
+## Checklist de lanzamiento
+- [ ] Comprar dominio y conectar Cloudflare Pages (rama de producción `main`).
+- [ ] Reemplazar `deluzhotel.com` en `robots.txt` y `sitemap.xml` si el dominio es otro.
+- [ ] Convertir a URL absoluta `og:image` y las `image` del JSON-LD; añadir `<link rel="canonical">` y `og:url`.
+- [ ] Quitar `<meta name="robots" content="noindex">` de las 4 páginas.
+- [ ] Añadir la web en el Perfil de Empresa de Google y en Search Console; enlazar desde Booking/Expedia/redes.
 
 ## Publicación (plan)
 Hosting estático en **Cloudflare Pages** conectado a este repositorio (también valen Netlify o Vercel). Rama de producción: `main`. Cada push publica automáticamente. Dominio propuesto: `deluzhotel.com` (a nombre del hotel).

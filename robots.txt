@@ -1,0 +1,8 @@
+# De Luz Hotel
+# Mientras sea prototipo, las páginas llevan <meta name="robots" content="noindex">.
+User-agent: *
+Allow: /
+Disallow: /propuesta/
+
+# Ajustar el dominio cuando esté comprado
+Sitemap: https://deluzhotel.com/sitemap.xml

@@ -2,10 +2,12 @@
 
 Web de **De Luz Hotel**, en El Limón, Samaná (República Dominicana). Concepto creativo: **"Luz tejida"**.
 
-> Estado: **prototipo aprobado en concepto**. La versión de producción (Fase 4) está pendiente.
+> Estado: **Fase 4 en curso**. Web lista técnicamente; faltan datos y fotos del cliente (ver `CLAUDE.md`).
 
 ## Qué hay aquí
-- `index.html`: página de inicio (prototipo navegable).
+- `index.html`: página de inicio.
+- `habitaciones/`: fichas de cada tipo de habitación.
+- `assets/`: estilos y scripts del sitio.
 - `propuesta/`: propuesta creativa (concepto, paleta, tipografía, arquitectura).
 - `img/`: fotos optimizadas para la web.
 - `fotos-originales/`: fotos originales en alta resolución.
