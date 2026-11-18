@@ -56,6 +56,17 @@ Encabezado, pie, panel de WhatsApp y visor de fotos están repetidos en cada HTM
 - **Cercanías:** Salto El Limón (el más cercano), Playa Morón, Las Terrenas, Santa Bárbara de Samaná (≈ 13 km), Aeropuerto El Catey AZS (≈ 32 km).
 - **Valoraciones:** 7.2/10 en Booking (73 opiniones); 7.8/10 Momondo; 6.0/10 Expedia y Hotels.com; 3/5 Tripadvisor (8 opiniones). Elogios: dueño atento, trato familiar, habitaciones limpias, piscina pequeña que gusta a los niños. Quejas: agua caliente, ruido, limpieza de la piscina. **Decisión: no mostrar la puntuación en la web**; solo citas reales positivas cuando se aprueben.
 
+## Web antigua (deluzhotel.com, Wix, hecha el 05/04/2016)
+Revisada el 18/11/2026. Fotos e imágenes descargadas solo como referencia (no están en el repo).
+- **Logotipo encontrado:** "De Luz Hotel" en verde con una rodaja de limón en la "o" y lema en cursiva "Un lugar para t…" (cortado; probablemente "Un lugar para ti"). **Pendiente: que el cliente decida si se usa y pedir el archivo original.**
+- **Teléfonos:** reservas **809-757-5168** ("operador multilingüe"); **809-484-9331** aparece como celular de **Jose Morel**, autor de la web (posible dueño o diseñador). Correo personal de esa persona: no usar.
+- **Edificio de la web antigua:** naranja/amarillo de 3 plantas con balcones y cocinetas en el balcón; habitaciones naranjas con ropa de cama roja. **No coincide con las fotos del cliente** (edificio blanco). ¿Dos edificios, reforma o fotos antiguas? Confirmar.
+- **Habitaciones (2016):** 12 en total: 4 estudios con cocina, balcón, agua fría y caliente, cama king, TV por cable, A/A y wifi; 8 habitaciones con terraza o balcón, agua fría y caliente, cama queen y/o twin.
+- **Distancias (web antigua):** 5 min de la playa de El Limón; 14 km de Las Terrenas; aeropuerto El Portillo a 10 min; Santo Domingo a ~2 h en coche; Puerto Plata/Santiago ~2,5 h.
+- **Excursiones (web antigua):** Salto El Limón a caballo con rancho recomendado por el hotel (~35 min a caballo, almuerzo típico); avistamiento de ballenas del 15 de enero al 31 de marzo con parada en Cayo Levantado. El hotel **recomienda** ranchos.
+- **Piscina:** no aparece en la web antigua (ni fotos ni texto).
+- **Imágenes de excursiones:** varias parecen de banco de imágenes (ballena, buceo, tirolina, playa con palmeras, Los Haitises). **No usar** sin confirmar que son del hotel.
+
 ## Lo que muestran las fotos
 - Edificio blanco de 3 plantas, ventanales con marco negro, franja de travertino, puertas de madera, árboles jóvenes.
 - **Habitación Doble:** 2 camas queen con base de madera, lámparas colgantes de mimbre, aire acondicionado, TV, perchero abierto con repisa, mesitas flotantes.
@@ -105,7 +116,7 @@ Páginas aparte (Fase 4): `/habitaciones/doble`, `/habitaciones/estudio`; opcion
 - [x] Página 404 y cabeceras de caché (`_headers`).
 
 ## Pendientes (dependen del cliente)
-- [ ] Forma oficial del nombre (De Luz / Deluz) y logotipo. Hoy: SEO usa "De Luz Hotel"; el logotipo provisional dice "Deluz".
+- [ ] Forma oficial del nombre y logotipo: la web antigua usa **"De Luz Hotel"** con logo verde y limón. ¿Se adopta? (afectaría a la paleta "Luz tejida"). Hoy el logotipo provisional dice "Deluz".
 - [ ] **Qué número es el WhatsApp de reservas:** 809-757-5168 (web oficial) o 809-484-9331 (Expedia). Correo ya puesto: deluzhotel@gmail.com.
 - [ ] Número total de habitaciones (8 según la web oficial) y **capacidad** de cada tipo (2–3 según la web oficial, pero las fotos muestran 2 camas queen). Hoy `tbd`.
 - [x] Baño privado en todas (web oficial).
