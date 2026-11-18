@@ -45,12 +45,16 @@ Encabezado, pie, panel de WhatsApp y visor de fotos están repetidos en cada HTM
 - **Ubicación:** El Limón, Samaná 32000, República Dominicana.
 - **Coordenadas:** 19.2942143, -69.4327929.
 - **Google Maps:** https://www.google.com/maps/place/De+Luz+Hotel/@19.2942143,-69.4327929,17z/data=!3m1!4b1!4m6!3m5!1s0x8eaee575bb2371f7:0xa61d08177c4b8f41!8m2!3d19.2942143!4d-69.4327929
-- **Teléfono:** +1 809 484 9331 (usado como WhatsApp: `https://wa.me/18094849331`). **Confirmar que tiene WhatsApp.**
-- **Fuentes de datos:** fichas en Expedia (h36192376), Hotels.com, Kayak, Momondo.
+- **Web actual del hotel:** https://www.deluzhotel.com (el dominio `deluzhotel.com` ya existe y es del hotel; para publicar hay que conseguir acceso a su DNS, no comprar otro).
+- **Dirección (web oficial):** carretera El Limón – Las Terrenas, detrás del gimnasio de El Limón.
+- **Correo (web oficial):** deluzhotel@gmail.com.
+- **Teléfonos — CONFLICTO:** la web oficial da **809-757-5168**; Expedia/Momondo dan **+1 809 484 9331** (hoy usado como WhatsApp en todo el sitio). **Confirmar cuál es el WhatsApp de reservas.**
+- **Fuentes de datos:** web oficial deluzhotel.com; fichas en Expedia (h36192376), Hotels.com, Booking, Tripadvisor (d10816859), Trip.com, Kayak, Momondo.
+- **Habitaciones según la web oficial:** 8 habitaciones para 2 o 3 personas, con TV, ventiladores, wifi, aire acondicionado, **baño privado** y terraza; jardín cerrado y parqueo privado. Otras fuentes: "12 habitaciones" (Exploreo), tipos Basic Triple / Deluxe King / Twin (Trip.com). **Puede describir el edificio antiguo**: las fotos del cliente muestran un edificio nuevo de 3 plantas con 2 camas queen por habitación y estudios con cocineta interior.
 - **Servicios según plataformas:** piscina al aire libre, wifi gratis, parqueo gratis, gimnasio, terraza, jardín, parrillas, admite mascotas (perros y gatos hasta 10 kg), traslado al aeropuerto con costo extra, se acepta efectivo. Sin restaurante de desayuno.
-- **Check-in:** 3:00 – 8:00 p. m. Check-out: pendiente.
+- **Check-in:** 3:00 – 8:00 p. m. (Expedia). Otras fuentes: 15:00–23:00. **Check-out — CONFLICTO:** 12:00 (Trip.com), 13:00 (Expedia), 14:30 (Momondo/Reserving).
 - **Cercanías:** Salto El Limón (el más cercano), Playa Morón, Las Terrenas, Santa Bárbara de Samaná (≈ 13 km), Aeropuerto El Catey AZS (≈ 32 km).
-- **Valoraciones:** 6.0/10 en Expedia y Hotels.com; 7.8/10 en Momondo. Quejas puntuales de agua caliente. **Decisión: no mostrar la puntuación en la web**; solo citas reales positivas cuando se aprueben.
+- **Valoraciones:** 7.2/10 en Booking (73 opiniones); 7.8/10 Momondo; 6.0/10 Expedia y Hotels.com; 3/5 Tripadvisor (8 opiniones). Elogios: dueño atento, trato familiar, habitaciones limpias, piscina pequeña que gusta a los niños. Quejas: agua caliente, ruido, limpieza de la piscina. **Decisión: no mostrar la puntuación en la web**; solo citas reales positivas cuando se aprueben.
 
 ## Lo que muestran las fotos
 - Edificio blanco de 3 plantas, ventanales con marco negro, franja de travertino, puertas de madera, árboles jóvenes.
@@ -100,19 +104,21 @@ Páginas aparte (Fase 4): `/habitaciones/doble`, `/habitaciones/estudio`; opcion
 
 ## Pendientes (dependen del cliente)
 - [ ] Forma oficial del nombre (De Luz / Deluz) y logotipo. Hoy: SEO usa "De Luz Hotel"; el logotipo provisional dice "Deluz".
-- [ ] Confirmar WhatsApp en +1 809 484 9331; correo de contacto (hoy marcado `tbd`).
-- [ ] Tipos de habitación (Expedia lista 5), número total y **capacidad** de cada tipo (hoy `tbd`).
-- [ ] Baño privado en todas; agua caliente resuelta; hora de check-out; otros métodos de pago.
+- [ ] **Qué número es el WhatsApp de reservas:** 809-757-5168 (web oficial) o 809-484-9331 (Expedia). Correo ya puesto: deluzhotel@gmail.com.
+- [ ] Número total de habitaciones (8 según la web oficial) y **capacidad** de cada tipo (2–3 según la web oficial, pero las fotos muestran 2 camas queen). Hoy `tbd`.
+- [x] Baño privado en todas (web oficial).
+- [ ] Agua caliente resuelta; hora de check-out (12:00 / 13:00 / 14:30); otros métodos de pago.
+- [ ] ¿Usar como testimonio la reseña de Tripadvisor "el dueño siempre estuvo disponible y el personal me trató como si estuviera en su casa"? (requiere aprobación).
 - [ ] Historia y años de trayectoria (párrafo `tbd` en "El hotel").
 - [ ] Fotos de piscina (candidata a portada "De día"), gimnasio, terraza, jardín, entrada, entorno.
 - [ ] Versión en inglés (decidir).
 
 ## Checklist de lanzamiento
-- [ ] Comprar dominio y conectar Cloudflare Pages (rama de producción `main`).
+- [ ] Conseguir acceso al dominio existente `deluzhotel.com` (quién lo administra) y conectar Cloudflare Pages (rama de producción `main`).
 - [ ] Reemplazar `deluzhotel.com` en `robots.txt` y `sitemap.xml` si el dominio es otro.
 - [ ] Convertir a URL absoluta `og:image` y las `image` del JSON-LD; añadir `<link rel="canonical">` y `og:url`.
 - [ ] Quitar `<meta name="robots" content="noindex">` de las 4 páginas.
 - [ ] Añadir la web en el Perfil de Empresa de Google y en Search Console; enlazar desde Booking/Expedia/redes.
 
 ## Publicación (plan)
-Hosting estático en **Cloudflare Pages** conectado a este repositorio (también valen Netlify o Vercel). Rama de producción: `main`. Cada push publica automáticamente. Dominio propuesto: `deluzhotel.com` (a nombre del hotel).
+Hosting estático en **Cloudflare Pages** conectado a este repositorio (también valen Netlify o Vercel). Rama de producción: `main`. Cada push publica automáticamente. Dominio: `deluzhotel.com` (ya existe; hoy sirve la web antigua del hotel).
